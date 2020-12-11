@@ -36,5 +36,18 @@ namespace Boulangerie.Tests
       Pastry onePastryAtPrice = new Pastry();
       Assert.AreEqual(2, onePastryAtPrice.PastryOneAtHalfPrice(6));
     }
+    [TestMethod]
+    public void AllFullPricePastries_Include2For1AndModuloRemainder_Yes()
+    {
+      Pastry allFullPrice = new Pastry();
+      Assert.AreEqual(4, allFullPrice.AllFullPricePastries(5));
+    }
+    [TestMethod]
+    public void PastryFinalCost_CalculatesCorrectTotal_Yes()
+    {
+      Pastry cartTotal = new Pastry();
+      Assert.AreEqual
+      (9, cartTotal.PastryFinalCost(5));
+    }
   }
 }

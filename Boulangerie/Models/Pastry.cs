@@ -2,6 +2,8 @@ namespace Boulangerie
 {
   public class Pastry
   {
+    // convert 'public' classes used only for calculations to private after testing is done with.
+    // then... refactor, baby.
     public int PastryDeal(int pastryQuantity)
     {
       return pastryQuantity % 3;
@@ -15,6 +17,26 @@ namespace Boulangerie
     {
       int onePastryAtPrice = pastryQuantity - PastryDeal(pastryQuantity);
       return (onePastryAtPrice / 3);
+    }
+    public int AllFullPricePastries(int pastryQuantity)
+    { 
+      return 
+      (
+        PastryTwoAtFullPrice(pastryQuantity) 
+        + 
+        PastryDeal(pastryQuantity)
+      );
+    }
+    public int PastryFinalCost(int pastryQuantity)
+    {
+      int fullPrice = 2;
+      int discountPrice = 1;
+      return 
+      (
+        (AllFullPricePastries(pastryQuantity) * fullPrice)
+        + 
+        (PastryOneAtHalfPrice(pastryQuantity) * discountPrice)
+      );
     }
   }
 }
