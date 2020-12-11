@@ -17,8 +17,8 @@ namespace Boulangerie
     public int BreadFinalCost(int breadQuantity)
     {
       // in this test, bread input quantity is 2
-      int breadToCalc = BreadFullPrice(breadQuantity); // this only takes 2/3 of bread, rounded down, so 0
-      return breadToCalc * 5; // at this point, should return 0
+      int breadToCalc = BreadFullPrice(breadQuantity) + BreadDeal(breadQuantity); // this should = 0 + 2
+      return breadToCalc * 5; // at this point, should return 10
     }
   }
 }
