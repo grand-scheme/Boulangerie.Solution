@@ -25,16 +25,22 @@ namespace Boulangerie.Tests
       Assert.AreEqual(6, testBreadFullPriceQuantity.BreadFullPrice(10));
     }
     [TestMethod]
-    public void BreadFinalCost_IsCheckoutPriceAccuratePerDiscount_Yes()
+    public void BreadFinalCost_IsAccuratePerDiscount_Yes()
     {
       Bread testCheckoutPrice = new Bread();
       Assert.AreEqual(100, testCheckoutPrice.BreadFinalCost(30));
     } 
     [TestMethod]
-    public void BreadFinalCost_DoesCheckoutPriceIncludeValuesNotDivisibleByThree_Yes()
+    public void BreadFinalCost_IncludesValuesLessThanThree_Yes()
     {
       Bread testCheckoutPrice = new Bread();
       Assert.AreEqual(10, testCheckoutPrice.BreadFinalCost(2));
+    } 
+    [TestMethod]
+    public void BreadFinalCost_IncludesValuesNotDivisibleByThree_Yes()
+    {
+      Bread testCheckoutPrice = new Bread();
+      Assert.AreEqual(25, testCheckoutPrice.BreadFinalCost(7));
     } 
   }
 }
