@@ -28,7 +28,7 @@ namespace Boulangerie.Tests
     public void BreadFinalCost_IsCheckoutPriceAccuratePerDiscount_Yes()
     {
       Bread testCheckoutPrice = new Bread();
-      Assert.AreEqual(50, testCheckoutPrice.BreadFinalCost(30));
+      Assert.AreEqual(100, testCheckoutPrice.BreadFinalCost(30));
     } 
   }
 }
