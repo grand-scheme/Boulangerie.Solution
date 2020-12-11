@@ -7,8 +7,10 @@ namespace Boulangerie.Tests
   public class BreadTests 
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public bool Bread_IsNumberDivisibleBy3_True()
     {
+      Bread testBreadQuantity = new Bread();
+      Assert.AreEqual(true, testBreadQuantity.BreadDeal(99));
       // Test method will go here
       // Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
     }

@@ -2,6 +2,9 @@ namespace Boulangerie
 {
   public class Bread
   {
-    // properties, constructors, methods, etc. go here
+    public bool BreadDeal(int breadQuantity) 
+    {
+      // 
+    }
   }
 }
