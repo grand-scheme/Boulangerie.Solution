@@ -4,7 +4,11 @@ namespace Boulangerie
   {
     public int PastryDeal(int pastryQuantity)
     {
-      return pastryQuantity; // anticipated fail; input is 99
+      return pastryQuantity % 3;
+    }
+    public int PastryTwoAtFullPrice(int pastryQuantity)
+    { // testing: number being bought is 4
+      return pastryQuantity; // bad test, should return 4
     }
   }
 }
