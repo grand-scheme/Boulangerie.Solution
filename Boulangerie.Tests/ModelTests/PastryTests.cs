@@ -30,5 +30,11 @@ namespace Boulangerie.Tests
       Pastry onePastryAtPrice = new Pastry();
       Assert.AreEqual(1, onePastryAtPrice.PastryOneAtHalfPrice(3));
     }
+    [TestMethod]
+    public void PastryOneAtHalfPrice_IsNotSimplyOne_Yes()
+    {
+      Pastry onePastryAtPrice = new Pastry();
+      Assert.AreEqual(2, onePastryAtPrice.PastryOneAtHalfPrice(6));
+    }
   }
 }
