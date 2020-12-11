@@ -22,7 +22,13 @@ namespace Boulangerie.Tests
     public void PastryTwoAtFullPrice_IsTwoThirdsOfPastryQuantityMinusExtra_Yes()
     {
       Pastry twoPastriesAtPrice = new Pastry();
-      Assert.AreEqual(2, twoPastriesAtPrice.PastryTwoAtFullPrice(4));
+      Assert.AreEqual(4, twoPastriesAtPrice.PastryTwoAtFullPrice(7));
+    }
+    [TestMethod]
+    public void PastryOneAtHalfPrice_IsOneThirdOfTotalQuantityMinusRemainder_Yes()
+    {
+      Pastry onePastryAtPrice = new Pastry();
+      Assert.AreEqual(1, onePastryAtPrice.PastryOneAtHalfPrice(3));
     }
   }
 }
