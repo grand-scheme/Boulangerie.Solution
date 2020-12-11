@@ -4,7 +4,8 @@ namespace Boulangerie
   {
     public bool BreadDeal(int breadQuantity)
     {
-      return breadQuantity % 3 == 0;
+      int breadWithoutDiscount = breadQuantity % 3;
+      return breadWithoutDiscount == 0;
     }
   }
 }
