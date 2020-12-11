@@ -12,5 +12,11 @@ namespace Boulangerie.Tests
       Bread testBreadQuantity = new Bread();
       Assert.AreEqual(true, testBreadQuantity.BreadDeal(99));
     }
+    [TestMethod]
+    public void BreadDeal_IsModuloDivisibleByThree_False()
+    {
+      Bread testBreadQuantity = new Bread();
+      Assert.AreEqual(false, testBreadQuantity.BreadDeal(103));
+    }
   }
 }
