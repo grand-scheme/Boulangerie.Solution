@@ -2,6 +2,9 @@ namespace Boulangerie
 {
   public class Pastry
   {
-    // properties, constructors, methods, etc. go here
+    public int PastryDeal(int pastryQuantity)
+    {
+      return pastryQuantity; // anticipated fail; input is 99
+    }
   }
 }

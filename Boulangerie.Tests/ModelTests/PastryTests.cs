@@ -7,10 +7,10 @@ namespace Boulangerie.Tests
   public class PastryTests 
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void PastryDeal_IsDivisibleByThree_True()
     {
-      // Test method will go here
-      // Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      Pastry testPastryQuantity = new Pastry();
+      Assert.AreEqual(0, testPastryQuantity.PastryDeal(99));
     }
   }
 }
