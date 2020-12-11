@@ -30,5 +30,11 @@ namespace Boulangerie.Tests
       Bread testCheckoutPrice = new Bread();
       Assert.AreEqual(100, testCheckoutPrice.BreadFinalCost(30));
     } 
+    [TestMethod]
+    public void BreadFinalCost_DoesCheckoutPriceIncludeValuesNotDivisibleByThree_Yes()
+    {
+      Bread testCheckoutPrice = new Bread();
+      Assert.AreEqual(10, testCheckoutPrice.BreadFinalCost(2));
+    } 
   }
 }
