@@ -6,6 +6,11 @@ namespace Boulangerie
     {
       int breadWithoutDiscount = breadQuantity % 3;
       return breadWithoutDiscount;
+      // this is the bread where no discount applies. will be added to calculation prior to formulating price.
+    }
+    public int BreadFullPrice(int breadQuantity)
+    {
+      return 1;
     }
   }
 }

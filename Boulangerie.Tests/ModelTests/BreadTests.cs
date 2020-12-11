@@ -18,5 +18,11 @@ namespace Boulangerie.Tests
       Bread testBreadQuantity = new Bread();
       Assert.AreNotEqual(0, testBreadQuantity.BreadDeal(103));
     }
+    [TestMethod]
+    public void BreadFullPrice_IsQuantityTwoThirdsOfBreadQuantityQuotient_Yes()
+    {
+      Bread testBreadFullPriceQuantity = new Bread();
+      Assert.AreEqual(6, testBreadFullPriceQuantity.BreadFullPrice(10));
+    }
   }
 }
