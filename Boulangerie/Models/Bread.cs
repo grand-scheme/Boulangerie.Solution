@@ -10,7 +10,9 @@ namespace Boulangerie
     }
     public int BreadFullPrice(int breadQuantity)
     {
-      return 1;
+      int breadWithDiscount = breadQuantity - BreadDeal(breadQuantity);
+      breadWithDiscount = (2 * breadWithDiscount / 3);
+      return breadWithDiscount;
     }
   }
 }
