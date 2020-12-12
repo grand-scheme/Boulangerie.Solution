@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Boulangerie;
 
 namespace Boulangerie.Tests
 {
@@ -7,22 +6,22 @@ namespace Boulangerie.Tests
   public class BreadTests
   {
     [TestMethod]
-    public void BreadDeal_IsNumberDivisibleByThree_True()
+    public void BreadOutsideDiscount_IsNumberDivisibleByThree_True()
     {
       Bread testBreadQuantity = new Bread();
-      Assert.AreEqual(0, testBreadQuantity.BreadDeal(99));
+      Assert.AreEqual(0, testBreadQuantity.BreadOutsideDiscount(99));
     }
     [TestMethod]
-    public void BreadDeal_IsModuloDivisibleByThree_False()
+    public void BreadOutsideDiscount_IsModuloDivisibleByThree_False()
     {
       Bread testBreadQuantity = new Bread();
-      Assert.AreNotEqual(0, testBreadQuantity.BreadDeal(103));
+      Assert.AreNotEqual(0, testBreadQuantity.BreadOutsideDiscount(103));
     }
     [TestMethod]
-    public void BreadFullPrice_IsQuantityTwoThirdsOfBreadQuantityQuotient_Yes()
+    public void BreadAtFullPrice_IsQuantityTwoThirdsOfBreadQuantityQuotient_Yes()
     {
-      Bread testBreadFullPriceQuantity = new Bread();
-      Assert.AreEqual(6, testBreadFullPriceQuantity.BreadFullPrice(10));
+      Bread testBreadAtFullPriceQuantity = new Bread();
+      Assert.AreEqual(6, testBreadAtFullPriceQuantity.BreadAtFullPrice(10));
     }
     [TestMethod]
     public void BreadFinalCost_IsAccuratePerDiscount_Yes()

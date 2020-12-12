@@ -2,21 +2,19 @@ namespace Boulangerie
 {
   public class Bread
   {
-    public int BreadDeal(int breadQuantity)
+    public int BreadOutsideDiscount(int breadQuantity)
     {
-      int breadWithoutDiscount = breadQuantity % 3;
-      return breadWithoutDiscount;
+      return (breadQuantity % 3);
     }
-    public int BreadFullPrice(int breadQuantity)
+    public int BreadAtFullPrice(int breadQuantity)
     {
-      int breadWithDiscount = breadQuantity - BreadDeal(breadQuantity);
-      breadWithDiscount = (2 * breadWithDiscount / 3);
-      return breadWithDiscount;
+      int twoAtFullPrice = breadQuantity - BreadOutsideDiscount(breadQuantity);
+      return (2 * twoAtFullPrice / 3);
     }
     public int BreadFinalCost(int breadQuantity)
     {
-      int breadToCalc = BreadFullPrice(breadQuantity) + BreadDeal(breadQuantity);
-      return breadToCalc * 5;
+      int breadCostAfterDiscount = BreadAtFullPrice(breadQuantity) + BreadOutsideDiscount(breadQuantity);
+      return (breadCostAfterDiscount * 5);
     }
   }
 }
