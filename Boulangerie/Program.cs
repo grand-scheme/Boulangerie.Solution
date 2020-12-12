@@ -34,16 +34,17 @@ namespace Boulangerie
       }
       else
       {
-        pastryCost = PastryConsole();
-        return pastryCost;
+        return pastryCost = PastryConsole();
       }
     }
     static int BreadConsole()
     {
       Console.WriteLine("how many breads u want");
-      int bread = int.TryParse(Console.ReadLine(), out bread) ? bread : 0;
+      int bread = (int.TryParse(Console.ReadLine(), out bread) && bread > 0) ? bread : 0;
       
-      Console.WriteLine("So you want " + bread + " loaves of bread?");
+      string plural = (bread != 1) ? "loaves" : "loaf";
+      Console.WriteLine("So you want " + bread + " " + plural + " of bread?");
+
       Bread cartTotal = new Bread();
       int breadCost = cartTotal.BreadFinalCost(bread);
       
@@ -54,8 +55,7 @@ namespace Boulangerie
       }
       else
       {
-        breadCost = BreadConsole();
-        return breadCost;
+        return breadCost = BreadConsole();
       }
     }
 
