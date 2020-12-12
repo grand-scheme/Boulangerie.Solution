@@ -38,15 +38,30 @@ namespace Boulangerie
     }
     else
     {
-      PastryConsole();
-      return 0;
+      pastryCost = PastryConsole();
+      return pastryCost;
     }
   }
-  // static void BreadConsole()
-  // {
-  // }
-
-
+static int BreadConsole()
+  {
+    Console.WriteLine("how many breads u want");
+    int bread = int.TryParse(Console.ReadLine(), out bread) ? bread : 0;
+    Console.WriteLine("So you want " + bread + " loaves of bread?");
+    Bread cartTotal = new Bread();
+    int breadCost = cartTotal.BreadFinalCost(bread);
+    Console.WriteLine("That'll cost you $" + breadCost +". You good with that?");
+    Console.WriteLine("You can answer YES or NO");
+    string confirmation = Console.ReadLine().ToUpper();
+    if (YesOrNoQuestion(confirmation) == true)
+    {
+      return breadCost;
+    }
+    else
+    {
+      BreadConsole();
+      return breadCost;
+    }
+  }
 
 
 
@@ -61,6 +76,11 @@ namespace Boulangerie
   {
   int pastryCart = PastryConsole();
   Console.WriteLine("back in main, with " + pastryCart);
+  }
+  else if (selection == "bread")
+  {
+  int breadCart = BreadConsole();
+  Console.WriteLine("back in main, with " + breadCart);
   }
   else
   {
