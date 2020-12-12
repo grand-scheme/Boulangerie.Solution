@@ -15,50 +15,17 @@ namespace Boulangerie
       return checkout.CheckoutCart(x, y);
     }
 
-
-    static int PastryConsole()
+    static int BuyBread()
     {
-      Console.WriteLine("how many pastries u want");
-      int pastry = (int.TryParse(Console.ReadLine(), out pastry) && pastry > 0) ? pastry : 0;
-
-      string plural = (pastry != 1) ? "pastries" : "pastry";
-      Console.WriteLine("So you want " + pastry + " " + plural + "?");
-
-      Pastry cartTotal = new Pastry();
-      int pastryCost = cartTotal.PastryFinalCost(pastry);
-
-      Console.WriteLine("That'll cost you $" + pastryCost +". You good with that?");
-      if (YesOrNo() == true)
-      {
-        return pastryCost;
-      }
-      else
-      {
-        return pastryCost = PastryConsole();
-      }
-    }
-    static int BreadConsole()
-    {
-      Console.WriteLine("how many breads u want");
-      int bread = (int.TryParse(Console.ReadLine(), out bread) && bread > 0) ? bread : 0;
-      
-      string plural = (bread != 1) ? "loaves" : "loaf";
-      Console.WriteLine("So you want " + bread + " " + plural + " of bread?");
-
-      Bread cartTotal = new Bread();
-      int breadCost = cartTotal.BreadFinalCost(bread);
-      
-      Console.WriteLine("That'll cost you $" + breadCost +". You good with that?");
-      if (YesOrNo() == true)
-      {
-        return breadCost;
-      }
-      else
-      {
-        return breadCost = BreadConsole();
-      }
+      ConsoleCalcs buyBread = new ConsoleCalcs();
+      return buyBread.BreadConsole();
     }
 
+    static int BuyPastries()
+    {
+      ConsoleCalcs buyPastries = new ConsoleCalcs();
+      return buyPastries.PastryConsole();
+    }
 
     static void Main()
     {
@@ -71,11 +38,11 @@ namespace Boulangerie
       
       if (selection == "PASTRY" || selection == "P") 
       {
-        pastryCart = PastryConsole();
+        pastryCart = BuyPastries();
 
         Console.WriteLine("Your pastry total is $" + pastryCart);
         Console.WriteLine("did you want some bread too?");
-        if (YesOrNo() == true) { breadCart = BreadConsole(); }
+        if (YesOrNo() == true) { breadCart = BuyBread(); }
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
         {
@@ -88,13 +55,13 @@ namespace Boulangerie
       }
       else if (selection == "BREAD" || selection == "B")
       {
-        breadCart = BreadConsole();
+        breadCart = BuyBread();
 
         Console.WriteLine("Your bread total is $" + breadCart);
         Console.WriteLine("did you want some pastries too?");
         if (YesOrNo() == true)
         {
-          pastryCart = PastryConsole();
+          pastryCart = BuyPastries();
         }
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
