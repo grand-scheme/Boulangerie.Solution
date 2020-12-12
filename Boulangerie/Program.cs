@@ -4,23 +4,9 @@ namespace Boulangerie
 {
   class ConsoleInterface
   {
-    static bool YesOrNoQuestion()
-    {
-      Console.WriteLine("You can answer YES or NO");
-      string confirmation = Console.ReadLine().ToUpper();
-      if (confirmation == "YES" || confirmation == "Y")
-      { 
-        return true;
-      }
-      else if (confirmation == "NO" || confirmation == "N")
-      { 
-        return false; 
-      }
-      else
-      {
-        Console.WriteLine("Wanna run that by me one more time?");
-        return YesOrNoQuestion();
-      }
+    static bool YesOrNo() {
+      ConsoleBackground question = new ConsoleBackground();
+      return question.YesOrNoQuestion();
     }
     static int PastryConsole()
     {
@@ -33,7 +19,7 @@ namespace Boulangerie
       int pastryCost = cartTotal.PastryFinalCost(pastry);
 
       Console.WriteLine("That'll cost you $" + pastryCost +". You good with that?");
-      if (YesOrNoQuestion() == true)
+      if (YesOrNo() == true)
       {
         return pastryCost;
       }
@@ -55,7 +41,7 @@ namespace Boulangerie
       int breadCost = cartTotal.BreadFinalCost(bread);
       
       Console.WriteLine("That'll cost you $" + breadCost +". You good with that?");
-      if (YesOrNoQuestion() == true)
+      if (YesOrNo() == true)
       {
         return breadCost;
       }
@@ -107,12 +93,12 @@ namespace Boulangerie
 
         Console.WriteLine("Your pastry total is $" + pastryCart);
         Console.WriteLine("did you want some bread too?");
-        if (YesOrNoQuestion() == true)
+        if (YesOrNo() == true)
         {
           breadCart = BreadConsole();
         }
         Console.WriteLine("Are you ready to check out?");
-        if (YesOrNoQuestion() == true)
+        if (YesOrNo() == true)
         {
           CheckoutCart(breadCart, pastryCart);
         }
@@ -127,12 +113,12 @@ namespace Boulangerie
 
         Console.WriteLine("Your bread total is $" + breadCart);
         Console.WriteLine("did you want some pastries too?");
-        if (YesOrNoQuestion() == true)
+        if (YesOrNo() == true)
         {
           pastryCart = PastryConsole();
         }
         Console.WriteLine("Are you ready to check out?");
-        if (YesOrNoQuestion() == true)
+        if (YesOrNo() == true)
         {
           CheckoutCart(breadCart, pastryCart);
         }
