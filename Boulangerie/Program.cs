@@ -4,10 +4,20 @@ namespace Boulangerie
 {
   class ConsoleInterface
   {
-    static bool YesOrNo() {
+    static bool YesOrNo() 
+    {
       ConsoleBackground question = new ConsoleBackground();
       return question.YesOrNoQuestion();
     }
+    static bool Checkout(int x, int y)
+    {
+      ConsoleBackground checkout = new ConsoleBackground();
+      return checkout.CheckoutCart(x, y);
+    }
+
+
+
+
     static int PastryConsole()
     {
       Console.WriteLine("how many pastries u want");
@@ -52,32 +62,7 @@ namespace Boulangerie
       }
     }
 
-    static void CheckoutCart(int breadCart, int pastryCart)
-    {
-      if ((breadCart  == 0) && (pastryCart == 0)) 
-      { 
-        Console.WriteLine("Oh, you're funny.");
-        Console.WriteLine("Just for that, we have to do this all again.");
-        Console.WriteLine("I hope you're happy.");
-        Main(); 
-      }
-      else if ((breadCart  != 0) && (pastryCart != 0)) 
-      { 
-        Console.WriteLine("Your grand total is $" + (breadCart + pastryCart)); 
-      }
-      else if (breadCart  != 0) 
-      { 
-        Console.WriteLine("Your total is $" + breadCart); 
-      }
-      else if (pastryCart != 0) 
-      { 
-        Console.WriteLine("Your total is $" + pastryCart); 
-      }
-      else 
-      { 
-        Console.WriteLine("¯\\_(ツ)_/¯");
-      }
-    }
+
     static void Main()
     {
       int breadCart = 0;
@@ -100,7 +85,7 @@ namespace Boulangerie
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
         {
-          CheckoutCart(breadCart, pastryCart);
+          if (Checkout(breadCart, pastryCart) == false) { Main(); }
         }
         else
         {
@@ -120,7 +105,7 @@ namespace Boulangerie
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
         {
-          CheckoutCart(breadCart, pastryCart);
+          if (Checkout(breadCart, pastryCart) == false) { Main(); }
         }
         else
         {
