@@ -2,67 +2,78 @@ using System;
 
 namespace Boulangerie
 {
-class ConsoleInterface
-{
-static void YesOrNoQuestion(string confirmation)
-{
-  if (confirmation == "YES")
-{
-}
-else if (confirmation == "NO")
-{
-}
-else
-{
-  Console.WriteLine("Wanna run that by me one more time? YES or NO?");
-  string repeat = Console.ReadLine().ToUpper();
-  YesOrNoQuestion(repeat);
-}
-}
+  class ConsoleInterface
+  {
+  static bool YesOrNoQuestion(string confirmation)
+  {
+    if (confirmation == "YES")
+    { 
+      return true;
+    }
+    else if (confirmation == "NO")
+    { 
+      return false; 
+    }
+    else
+    {
+      Console.WriteLine("Wanna run that by me one more time? YES or NO?");
+      string repeat = Console.ReadLine().ToUpper();
+      return YesOrNoQuestion(repeat);
+    }
+  }
 
-static void PastryConsole()
-{
-  Console.WriteLine("how many u want");
-  int pastry = int.TryParse(Console.ReadLine(), out pastry) ? pastry : 0;
-  Console.WriteLine("So you want " + pastry + " pastries?");
-  Pastry cartTotal = new Pastry();
-  int pastryCost = cartTotal.PastryFinalCost(pastry);
-  Console.WriteLine("That'll cost you $" + pastryCost +". You good with that?");
-  Console.WriteLine("You can answer YES or NO");
-  string confirmation = Console.ReadLine().ToUpper();
-  YesOrNoQuestion(confirmation);
-}
-// static void BreadConsole()
-// {
-// }
-
-
-
-
-
-
-static void Main()
-{
-Console.WriteLine("Hello");
-Console.WriteLine("Select: bread or pastry");
-string selection = Console.ReadLine().ToLower();
-Console.WriteLine("You chose " + selection);
-if (selection == "pastry") 
-{
-PastryConsole();
-}
-else
-{
-  Console.WriteLine("i'll get to u later");
-  Main();
-}
+  static int PastryConsole()
+  {
+    Console.WriteLine("how many u want");
+    int pastry = int.TryParse(Console.ReadLine(), out pastry) ? pastry : 0;
+    Console.WriteLine("So you want " + pastry + " pastries?");
+    Pastry cartTotal = new Pastry();
+    int pastryCost = cartTotal.PastryFinalCost(pastry);
+    Console.WriteLine("That'll cost you $" + pastryCost +". You good with that?");
+    Console.WriteLine("You can answer YES or NO");
+    string confirmation = Console.ReadLine().ToUpper();
+    if (YesOrNoQuestion(confirmation) == true)
+    {
+      return pastryCost;
+    }
+    else
+    {
+      PastryConsole();
+      return 0;
+    }
+  }
+  // static void BreadConsole()
+  // {
+  // }
 
 
 
 
 
 
+  static void Main()
+  {
+  Console.WriteLine("Hello");
+  Console.WriteLine("Select: bread or pastry");
+  string selection = Console.ReadLine().ToLower();
+  Console.WriteLine("You chose " + selection);
+  if (selection == "pastry") 
+  {
+  int pastryCart = PastryConsole();
+  Console.WriteLine("back in main, with " + pastryCart);
+  }
+  else
+  {
+    Console.WriteLine("i'll get to u later");
+    Main();
+  }
 
-}
-}
-}
+
+
+
+
+
+
+  }
+  }
+  }
