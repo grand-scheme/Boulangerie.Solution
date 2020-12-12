@@ -16,15 +16,14 @@ namespace Boulangerie
     }
 
 
-
-
     static int PastryConsole()
     {
       Console.WriteLine("how many pastries u want");
-      int pastry = int.TryParse(Console.ReadLine(), out pastry) ? pastry : 0;
+      int pastry = (int.TryParse(Console.ReadLine(), out pastry) && pastry > 0) ? pastry : 0;
 
+      string plural = (pastry != 1) ? "pastries" : "pastry";
+      Console.WriteLine("So you want " + pastry + " " + plural + "?");
 
-      Console.WriteLine("So you want " + pastry + " pastries?");
       Pastry cartTotal = new Pastry();
       int pastryCost = cartTotal.PastryFinalCost(pastry);
 
@@ -44,8 +43,6 @@ namespace Boulangerie
       Console.WriteLine("how many breads u want");
       int bread = int.TryParse(Console.ReadLine(), out bread) ? bread : 0;
       
-      // add if else for language re: 1 loaves
-      // add if else for Get That Deal
       Console.WriteLine("So you want " + bread + " loaves of bread?");
       Bread cartTotal = new Bread();
       int breadCost = cartTotal.BreadFinalCost(bread);
@@ -78,10 +75,7 @@ namespace Boulangerie
 
         Console.WriteLine("Your pastry total is $" + pastryCart);
         Console.WriteLine("did you want some bread too?");
-        if (YesOrNo() == true)
-        {
-          breadCart = BreadConsole();
-        }
+        if (YesOrNo() == true) { breadCart = BreadConsole(); }
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
         {
