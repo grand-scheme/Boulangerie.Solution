@@ -72,27 +72,41 @@ namespace Boulangerie
 
     static void Main()
     {
+      int breadCart = 0;
+      int pastryCart = 0;
+
       Console.WriteLine("Hello");
       Console.WriteLine("Select: bread or pastry");
       string selection = Console.ReadLine().ToLower();
-      Console.WriteLine("You chose " + selection);
+      
       if (selection == "pastry") 
       {
-        int pastryCart = PastryConsole();
-        Console.WriteLine("back in main, with " + pastryCart);
+        pastryCart = PastryConsole();
+        Console.WriteLine("Your pastry total is $" + pastryCart);
+        Console.WriteLine("did you want some bread too?");
+        Console.WriteLine("You can answer YES or NO");
+        string confirmation = Console.ReadLine().ToUpper();
+        if (YesOrNoQuestion(confirmation) == true)
+        {
+          breadCart = BreadConsole();
+          Console.WriteLine("Your bread total is $" + breadCart);
+          Console.WriteLine("Your pastry total is $" + pastryCart);
+        }
+        Console.WriteLine("Are you ready to check out?");
+        Console.WriteLine("Your current total is: $" + (pastryCart + breadCart));
       }
       else if (selection == "bread")
       {
-        int breadCart = BreadConsole();
-        Console.WriteLine("back in main, with $" + breadCart + "in bread");
+        breadCart = BreadConsole();
+        Console.WriteLine("Your bread total is $" + breadCart);
         Console.WriteLine("did you want some pastries too?");
         Console.WriteLine("You can answer YES or NO");
         string confirmation = Console.ReadLine().ToUpper();
         if (YesOrNoQuestion(confirmation) == true)
         {
-          int pastryCart = PastryConsole();
-          Console.WriteLine("back in main, with $" + pastryCart + " in pastries");
-          Console.WriteLine("You still have $" + breadCart + "in bread, too.");
+          pastryCart = PastryConsole();
+          Console.WriteLine("Your pastry total is $" + pastryCart);
+          Console.WriteLine("Your bread total is $" + breadCart);
         }
         else
         {
