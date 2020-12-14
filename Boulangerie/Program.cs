@@ -121,7 +121,15 @@ namespace Boulangerie
       }
       else
       {
-        Console.WriteLine("i'll get to u later");
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
+        Console.WriteLine("Sorry, that wasn't an item on our menu.");
+        Console.WriteLine("Could you please try that again?");
+        Console.WriteLine(" ");
+        Console.WriteLine("All our products are either a loaf of BREAD.");
+        Console.WriteLine("Or they're a PASTRY.");
+        Console.WriteLine("Here's our menu again.");
         Main();
       }
     }
