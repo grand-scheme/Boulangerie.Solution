@@ -21,7 +21,6 @@ namespace Boulangerie
       Pastry cartTotal = new Pastry();
       return cartTotal.PastryFinalCost(pastryQuantity);
     }
-    
     public int BreadConsole()
     {
       Console.WriteLine("how many breads u want");

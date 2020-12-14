@@ -14,19 +14,16 @@ namespace Boulangerie
       ConsoleBackground checkout = new ConsoleBackground();
       return checkout.CheckoutCart(x, y);
     }
-
     static int BuyBread()
     {
       ConsoleCalcs buyBread = new ConsoleCalcs();
       return buyBread.BreadConsole();
     }
-
     static int BuyPastries()
     {
       ConsoleCalcs buyPastries = new ConsoleCalcs();
       return buyPastries.PastryConsole();
     }
-
     static void Main()
     {
       int breadCart = 0;
