@@ -2,11 +2,11 @@ namespace Boulangerie
 {
   public class BuyOneGetTwoX
   {
-    public int SetPrice (string input)
+    private int SetPrice (string input)
     {
       return (input == "BREAD") ? 5 : 2;
     }
-    public int SetDiscount (string input)
+    private int SetDiscount (string input)
     {
       return (input == "BREAD") ? 0 : 1;
     }
