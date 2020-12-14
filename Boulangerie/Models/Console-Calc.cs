@@ -1,4 +1,6 @@
 using System;
+using Boulangerie.BreadModels;
+using Boulangerie.PastryModels;
 
 namespace Boulangerie
 {
@@ -9,6 +11,16 @@ namespace Boulangerie
       ConsoleBackground question = new ConsoleBackground();
       return question.YesOrNoQuestion();
     }
+    static int BreadCost(int breadQuantity)
+    {
+      Bread cartTotal = new Bread();
+      return cartTotal.BreadFinalCost(breadQuantity);
+    }
+    static int PastryCost(int pastryQuantity)
+    {
+      Pastry cartTotal = new Pastry();
+      return cartTotal.PastryFinalCost(pastryQuantity);
+    }
     
     public int BreadConsole()
     {
@@ -18,8 +30,7 @@ namespace Boulangerie
       string plural = (bread != 1) ? "loaves" : "loaf";
       Console.WriteLine("So you want " + bread + " " + plural + " of bread?");
 
-      Bread cartTotal = new Bread();
-      int breadCost = cartTotal.BreadFinalCost(bread);
+      int breadCost = BreadCost(bread);
       
       Console.WriteLine("That'll cost you $" + breadCost +". You good with that?");
       if (YesOrNo() == true)
@@ -39,8 +50,7 @@ namespace Boulangerie
       string plural = (pastry != 1) ? "pastries" : "pastry";
       Console.WriteLine("So you want " + pastry + " " + plural + "?");
 
-      Pastry cartTotal = new Pastry();
-      int pastryCost = cartTotal.PastryFinalCost(pastry);
+      int pastryCost = PastryCost(pastry);
 
       Console.WriteLine("That'll cost you $" + pastryCost +". You good with that?");
       if (YesOrNo() == true)
