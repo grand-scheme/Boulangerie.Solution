@@ -38,20 +38,26 @@ namespace Boulangerie
     }
     public string CheckVariables (int number, string input)
     {
-    return 
-    input // type
-    + " " 
-    + 5 // price
-    + " " 
-    + 0 // discount
-    + " " 
-    + number // quantity
-    + " " 
-    + 2 // not inside discount
-    + " " 
-    + 4 // full price
-    + " " 
-    + 1; // discounted price
+      int price = SetPrice(input);
+      int discount = SetDiscount(input);
+      int outsideDiscount = number % 3;
+      int buyTwo = ((number - outsideDiscount) * 2 / 3);
+      int fullPrice = buyTwo + outsideDiscount;
+      int getOne = ((number - outsideDiscount) / 3);
+    return input + " " + price + " " + discount + " " + number + " " + outsideDiscount + " " + fullPrice + " " + getOne; 
+    }
+    public int TheEquation (int number, string input)
+    {
+      string product = input;
+      int price = SetPrice(product);
+      int discount = SetDiscount(product);
+      
+      int outsideDiscount = (number % 3);
+      int getOne = ((number - outsideDiscount) / 3);
+      int fullPrice = (number - getOne);
+
+      int checkout = ((fullPrice * price) + (getOne * discount));
+      return checkout;
     }
 
   }
