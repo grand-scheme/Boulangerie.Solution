@@ -17,12 +17,12 @@ namespace Boulangerie
         return false; 
       }
       else
-      {
+      { 
         Console.WriteLine("Wanna run that by me one more time?");
         return YesOrNoQuestion();
       }
     }
-    public bool CheckoutCart(int breadCart, int pastryCart)
+    public bool EndOfTransaction(int breadCart, int pastryCart)
     {
     if ((breadCart  == 0) && (pastryCart == 0)) 
       { 
