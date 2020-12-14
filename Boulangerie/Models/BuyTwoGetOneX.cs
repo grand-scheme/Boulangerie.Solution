@@ -5,34 +5,26 @@ namespace Boulangerie
     public int SetPrice (string input)
     {
       int price = 100;
-      if (input == "bread" || input == "b")
+      if (input == "BREAD")
       { 
         price = 5;
       }
-      else if (input == "pastry" || input == "p")
-      {
-        price = 2;
-      }
       else 
       {
-        return 999999;
+        price = 2;
       }
       return price;
     }
     public int SetDiscount (string input)
     {
       int discount = 100;
-      if (input == "bread" || input == "b")
+      if (input == "BREAD")
       { 
         discount = 0;
       }
-      else if (input == "pastry" || input == "p")
-      {
-        discount = 1;
-      }
       else 
       {
-        return 999999;
+        discount = 1;
       }
       return discount;
     }
@@ -56,9 +48,7 @@ namespace Boulangerie
       int getOne = ((number - outsideDiscount) / 3);
       int fullPrice = (number - getOne);
 
-      int checkout = ((fullPrice * price) + (getOne * discount));
-      return checkout;
+      return ((fullPrice * price) + (getOne * discount));
     }
-
   }
 }
