@@ -6,22 +6,22 @@ namespace Boulangerie.Tests
   public class BreadTests
   {
     [TestMethod]
-    public void BreadOutsideDiscount_IsNumberDivisibleByThree_True()
+    public void ExcessQuantity_IsNumberDivisibleByThree_True()
     {
       Bread testBreadQuantity = new Bread();
-      Assert.AreEqual(0, testBreadQuantity.BreadOutsideDiscount(99));
+      Assert.AreEqual(0, testBreadQuantity.ExcessQuantity(99));
     }
     [TestMethod]
-    public void BreadOutsideDiscount_IsModuloDivisibleByThree_False()
+    public void ExcessQuantity_IsModuloDivisibleByThree_False()
     {
       Bread testBreadQuantity = new Bread();
-      Assert.AreNotEqual(0, testBreadQuantity.BreadOutsideDiscount(103));
+      Assert.AreNotEqual(0, testBreadQuantity.ExcessQuantity(103));
     }
     [TestMethod]
-    public void BreadAtFullPrice_IsQuantityTwoThirdsOfBreadQuantityQuotient_Yes()
+    public void FullPriceQuantity_ExcludesDiscountQuality_Yes()
     {
       Bread testBreadAtFullPriceQuantity = new Bread();
-      Assert.AreEqual(6, testBreadAtFullPriceQuantity.BreadAtFullPrice(10));
+      Assert.AreEqual(10, testBreadAtFullPriceQuantity.FullPriceQuantity(15));
     }
     [TestMethod]
     public void BreadFinalCost_IsAccuratePerDiscount_Yes()
