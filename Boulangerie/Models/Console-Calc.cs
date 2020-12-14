@@ -29,15 +29,16 @@ namespace Boulangerie
       string product = (input == "BREAD") ? "bread" : "pastry";
       string pluralProducts = (input == "BREAD") ? "loaves of bread" : "pastries";
       string singleProduct = (input == "BREAD") ? "loaf of bread" : "pastry";
-      Console.WriteLine("How many " + pluralProducts + " do you want?");
+      Console.WriteLine("How many " + pluralProducts + " would you like?");
 
       int quantity = (int.TryParse(Console.ReadLine(), out quantity) && quantity > 0) ? quantity : 0;
+      Console.WriteLine(" ");
       if (quantity % 3 == 2)
       {
         Console.WriteLine("You only want " + quantity + "? You know we have a deal going on right now...");
         if (input == "BREAD") 
         {
-          Console.WriteLine("It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Do you want to add one more?");
+          Console.WriteLine("It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Why would you say no to free bread?");
           quantity = YesOrNo() ? quantity + 1 : quantity;
         }
         else
@@ -46,18 +47,18 @@ namespace Boulangerie
           quantity = YesOrNo() ? quantity + 1 : quantity;
         }
       }
-      
+      Console.WriteLine(" ");
       if (quantity == 1) 
       {
-        Console.WriteLine("Alright, so it looks like you're getting " + quantity + " " + singleProduct + ".");
+        Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + singleProduct + ".");
       }
       else 
       {
-        Console.WriteLine("Alright, so it looks like you're getting " + quantity + " " + pluralProducts + ".");
+        Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + pluralProducts + ".");
       }
       int productTotal = ProductCart(quantity, input);
       Console.WriteLine("For that, your total's going to be $" + productTotal + ".");
-      Console.WriteLine("Are you good with that?");
+      Console.WriteLine("Everything look good?");
       if (YesOrNo() == true) 
       {
         return productTotal;
@@ -65,6 +66,8 @@ namespace Boulangerie
       else
       {
         Console.WriteLine("Okay, let's go back.");
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
         productTotal = Purchases(input);
         return productTotal;
       }
