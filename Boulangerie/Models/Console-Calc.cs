@@ -11,62 +11,63 @@ namespace Boulangerie
       ConsoleBackground question = new ConsoleBackground();
       return question.YesOrNoQuestion();
     }
-    static int BreadCost(int breadQuantity)
+    static int ProductCart(int quantity, string productType)
     {
+      if (productType == "BREAD")
+    { 
       Bread cartTotal = new Bread();
-      return cartTotal.BreadFinalCost(breadQuantity);
+      return cartTotal.BreadFinalCost(quantity);
     }
-    static int PastryCost(int pastryQuantity)
-    {
+    else 
+    { 
       Pastry cartTotal = new Pastry();
-      return cartTotal.PastryFinalCost(pastryQuantity);
+      return cartTotal.PastryFinalCost(quantity); 
+      }
     }
-    public int BreadConsole()
+    public int Purchases(string input)
     {
-      Console.WriteLine("how many breads u want");
-      int bread = (int.TryParse(Console.ReadLine(), out bread) && bread > 0) ? bread : 0;
-      
-      string plural = (bread != 1) ? "loaves" : "loaf";
-      Console.WriteLine("So you want " + bread + " " + plural + " of bread?");
+      string product = (input == "BREAD") ? "bread" : "pastry";
+      string pluralProducts = (input == "BREAD") ? "loaves of bread" : "pastries";
+      string singleProduct = (input == "BREAD") ? "loaf of bread" : "pastry";
+      Console.WriteLine("How many " + pluralProducts + " do you want?");
 
-      int breadCost = BreadCost(bread);
-      
-      Console.WriteLine("That'll cost you $" + breadCost +". You good with that?");
-      if (YesOrNo() == true)
+      int quantity = (int.TryParse(Console.ReadLine(), out quantity) && quantity > 0) ? quantity : 0;
+      if (quantity % 3 == 2)
       {
-        return breadCost;
+        Console.WriteLine("You only want " + quantity + "? You know we have a deal going on right now...");
+        if (input == "BREAD") 
+        {
+          Console.WriteLine("It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Do you want to add one more?");
+          quantity = YesOrNo() ? quantity + 1 : quantity;
+        }
+        else
+        {
+          Console.WriteLine("It's 'Buy three for $5` for our pastries. It's only a dollar to add one more to your bag. Do you want to add one more?");
+          quantity = YesOrNo() ? quantity + 1 : quantity;
+        }
+      }
+      
+      if (quantity == 1) 
+      {
+        Console.WriteLine("Alright, so it looks like you're getting " + quantity + " " + singleProduct + ".");
+      }
+      else 
+      {
+        Console.WriteLine("Alright, so it looks like you're getting " + quantity + " " + pluralProducts + ".");
+      }
+      int productTotal = ProductCart(quantity, input);
+      Console.WriteLine("For that, your total's going to be $" + productTotal + ".");
+      Console.WriteLine("Are you good with that?");
+      if (YesOrNo() == true) 
+      {
+        return productTotal;
       }
       else
       {
-        return breadCost = BreadConsole();
+        Console.WriteLine("Okay, let's go back.");
+        productTotal = Purchases(input);
+        return productTotal;
       }
     }
-    public int PastryConsole()
-    {
-      Console.WriteLine("how many pastries u want");
-      int pastry = (int.TryParse(Console.ReadLine(), out pastry) && pastry > 0) ? pastry : 0;
-
-      string plural = (pastry != 1) ? "pastries" : "pastry";
-      Console.WriteLine("So you want " + pastry + " " + plural + "?");
-
-      int pastryCost = PastryCost(pastry);
-
-      Console.WriteLine("That'll cost you $" + pastryCost +". You good with that?");
-      if (YesOrNo() == true)
-      {
-        return pastryCost;
-      }
-      else
-      {
-        return pastryCost = PastryConsole();
-      }
-    }
-    
-
-
-
-
-
-
   }
 }
