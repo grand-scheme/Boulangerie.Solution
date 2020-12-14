@@ -1,6 +1,6 @@
 namespace Boulangerie
 {
-  public abstract class Prices
+  public abstract class BreadPrices
   {
     public int FullPrice()
     {
@@ -11,7 +11,7 @@ namespace Boulangerie
       return 0;
     }
   }
-  public class Bread : Prices
+  public class Bread : BreadPrices
   {
     public int ExcessQuantity(int breadQuantity)
     {

@@ -6,40 +6,34 @@ namespace Boulangerie.Tests
   public class PastryTests 
   {
     [TestMethod]
-    public void PastryOutsideDiscount_IsDivisibleByThree_True()
+    public void ExcessQuantity_IsDivisibleByThree_True()
     {
       Pastry testPastryQuantity = new Pastry();
-      Assert.AreEqual(0, testPastryQuantity.PastryOutsideDiscount(99));
+      Assert.AreEqual(0, testPastryQuantity.ExcessQuantity(99));
     }
     [TestMethod]
-    public void PastryOutsideDiscount_SavesWhatIsNotDivisibleByThree_Yes()
+    public void ExcessQuantity_SavesWhatIsNotDivisibleByThree_Yes()
     {
       Pastry testPastryQuantity = new Pastry();
-      Assert.AreNotEqual(0, testPastryQuantity.PastryOutsideDiscount(91));
+      Assert.AreNotEqual(0, testPastryQuantity.ExcessQuantity(91));
     }
     [TestMethod]
-    public void PastryTwoAtFullPrice_IsTwoThirdsOfPastryQuantityMinusExtra_Yes()
-    {
-      Pastry twoPastriesAtPrice = new Pastry();
-      Assert.AreEqual(4, twoPastriesAtPrice.PastryTwoAtFullPrice(7));
-    }
-    [TestMethod]
-    public void PastryOneAtHalfPrice_IsOneThirdOfTotalQuantityMinusRemainder_Yes()
+    public void AtDiscountQuantity_IsOneThirdOfTotalQuantityMinusRemainder_Yes()
     {
       Pastry onePastryAtPrice = new Pastry();
-      Assert.AreEqual(1, onePastryAtPrice.PastryOneAtHalfPrice(3));
+      Assert.AreEqual(1, onePastryAtPrice.AtDiscountQuantity(3));
     }
     [TestMethod]
-    public void PastryOneAtHalfPrice_IsNotSimplyOne_Yes()
+    public void AtDiscountQuantity_IsNotSimplyOne_Yes()
     {
       Pastry onePastryAtPrice = new Pastry();
-      Assert.AreEqual(2, onePastryAtPrice.PastryOneAtHalfPrice(6));
+      Assert.AreEqual(2, onePastryAtPrice.AtDiscountQuantity(6));
     }
     [TestMethod]
-    public void AllFullPricePastries_Include2For1AndModuloRemainder_Yes()
+    public void FullPriceQuantity_Include2For1AndModuloRemainder_Yes()
     {
       Pastry allFullPrice = new Pastry();
-      Assert.AreEqual(4, allFullPrice.AllFullPricePastries(5));
+      Assert.AreEqual(4, allFullPrice.FullPriceQuantity(5));
     }
     [TestMethod]
     public void PastryFinalCost_CalculatesCorrectTotal_Yes()

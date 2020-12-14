@@ -1,39 +1,38 @@
 namespace Boulangerie
 {
-  public class Pastry
+    public abstract class PastryPrices
   {
-    public int PastryOutsideDiscount(int pastryQuantity)
+    public int FullPrice()
+    {
+      return 2;
+    }
+    public int DiscountPrice()
+    {
+      return 1;
+    }
+  }
+  public class Pastry : PastryPrices
+  {
+    public int ExcessQuantity(int pastryQuantity)
     {
       return pastryQuantity % 3;
     }
-    public int PastryTwoAtFullPrice(int pastryQuantity)
+    public int AtDiscountQuantity(int pastryQuantity)
     {
-      int twoAtFullPrice = pastryQuantity - PastryOutsideDiscount(pastryQuantity);
-      return (2 * twoAtFullPrice / 3);
+      int WithinDealQuantity = pastryQuantity - ExcessQuantity(pastryQuantity);
+      return (WithinDealQuantity / 3);
     }
-    public int PastryOneAtHalfPrice(int pastryQuantity)
+    public int FullPriceQuantity(int pastryQuantity)
     {
-      int oneAtHalfPrice = pastryQuantity - PastryOutsideDiscount(pastryQuantity);
-      return (oneAtHalfPrice / 3);
-    }
-    public int AllFullPricePastries(int pastryQuantity)
-    { 
-      return 
-      (
-        PastryTwoAtFullPrice(pastryQuantity) 
-        + 
-        PastryOutsideDiscount(pastryQuantity)
-      );
+      return pastryQuantity - AtDiscountQuantity(pastryQuantity);
     }
     public int PastryFinalCost(int pastryQuantity)
     {
-      int fullPrice = 2;
-      int discountPrice = 1;
       return 
       (
-        (AllFullPricePastries(pastryQuantity) * fullPrice)
-        + 
-        (PastryOneAtHalfPrice(pastryQuantity) * discountPrice)
+        (FullPriceQuantity(pastryQuantity) * FullPrice()) 
+        +
+        (AtDiscountQuantity(pastryQuantity) * DiscountPrice())
       );
     }
   }
