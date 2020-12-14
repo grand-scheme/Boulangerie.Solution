@@ -121,7 +121,7 @@ where `NEW-FOLDER` is where you would type the name of the folder you would like
 #### To run this project on your machine:
 1. Once you have the project locally stored, navigate to its main directory in your terminal of choice. By default, this is `csharp-boulangerie`. 
 
-2. Navigate to the subfolder `Boulangerie.Solution/Boulangerie`.
+2. Navigate to the subfolder `Boulangerie`.
 
 3. In your command line, input\
 `$ dotnet run`
