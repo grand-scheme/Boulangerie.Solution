@@ -17,5 +17,11 @@ namespace Boulangerie.Tests
       BuyOneGetTwoX testDiscount = new BuyOneGetTwoX();
       Assert.AreEqual(0, testDiscount.SetDiscount("bread"));
     }
+    [TestMethod]
+    public void CheckVariables_CanEachUnitBoughtBeSetToCorrectValue_True()
+    {
+      BuyOneGetTwoX testValues = new BuyOneGetTwoX();
+      Assert.AreEqual(("bread 5 0 5 2 4 1"), testValues.CheckVariables(5, "bread"));
+    }
   }
 }

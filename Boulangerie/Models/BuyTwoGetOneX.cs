@@ -36,5 +36,23 @@ namespace Boulangerie
       }
       return discount;
     }
+    public string CheckVariables (int number, string input)
+    {
+    return 
+    input // type
+    + " " 
+    + 5 // price
+    + " " 
+    + 0 // discount
+    + " " 
+    + number // quantity
+    + " " 
+    + 2 // not inside discount
+    + " " 
+    + 4 // full price
+    + " " 
+    + 1; // discounted price
+    }
+
   }
 }
