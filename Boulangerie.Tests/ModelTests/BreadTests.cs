@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Boulangerie.Tests
+namespace Boulangerie.BreadModels.Tests
 {
   [TestClass]
   public class BreadTests
@@ -28,18 +28,18 @@ namespace Boulangerie.Tests
     {
       Bread testCheckoutPrice = new Bread();
       Assert.AreEqual(100, testCheckoutPrice.BreadFinalCost(30));
-    } 
+    }
     [TestMethod]
     public void BreadFinalCost_IncludesValuesLessThanThree_Yes()
     {
       Bread testCheckoutPrice = new Bread();
       Assert.AreEqual(10, testCheckoutPrice.BreadFinalCost(2));
-    } 
+    }
     [TestMethod]
     public void BreadFinalCost_IncludesValuesNotDivisibleByThree_Yes()
     {
       Bread testCheckoutPrice = new Bread();
       Assert.AreEqual(25, testCheckoutPrice.BreadFinalCost(7));
-    } 
+    }
   }
 }
