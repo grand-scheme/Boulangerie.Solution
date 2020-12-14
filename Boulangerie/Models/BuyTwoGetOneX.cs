@@ -2,34 +2,23 @@ namespace Boulangerie
 {
   public class BuyOneGetTwoX
   {
-    public string NoticeProduct (string input)
-    {
-      if (input == "bread" || input == "b") 
-      {
-        return "bread";
-      } 
-      else if (input == "pastry" || input == "p") 
-      {
-      return "pastry"; 
-      }
-      else 
-      {
-        return "bad input";
-      }
-    }
     public int SetPrice (string input)
     {
       int price = 100;
       int discount = 100;
-      if (NoticeProduct(input) == "bread")
+      if (input == "bread" || input == "b")
       { 
         price = 5;
         discount = 0;
       }
-      else
+      else if (input == "pastry" || input == "p")
       {
         price = 2;
         discount = 1;
+      }
+      else 
+      {
+        return 999999;
       }
       return price;
     }
