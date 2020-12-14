@@ -15,16 +15,22 @@ namespace Boulangerie
       return checkout.CheckoutCart(x, y);
     }
 
-    static int BuyBread()
-    {
-      ConsoleCalcs buyBread = new ConsoleCalcs();
-      return buyBread.BreadConsole();
-    }
+    // static int BuyBread()
+    // {
+    //   ConsoleCalcs buyBread = new ConsoleCalcs();
+    //   return buyBread.BreadConsole();
+    // }
 
-    static int BuyPastries()
+    // static int BuyPastries()
+    // {
+    //   ConsoleCalcs buyPastries = new ConsoleCalcs();
+    //   return buyPastries.PastryConsole();
+    // }
+
+    static int ConsolidatedTerminal(string input)
     {
-      ConsoleCalcs buyPastries = new ConsoleCalcs();
-      return buyPastries.PastryConsole();
+      PurchaseTerminal buyProducts = new PurchaseTerminal();
+      return buyProducts.Purchases(input);
     }
 
     static void Main()
@@ -38,11 +44,10 @@ namespace Boulangerie
       
       if (selection == "PASTRY" || selection == "P") 
       {
-        pastryCart = BuyPastries();
+        pastryCart = ConsolidatedTerminal("PASTRY");
 
-        Console.WriteLine("Your pastry total is $" + pastryCart);
         Console.WriteLine("did you want some bread too?");
-        if (YesOrNo() == true) { breadCart = BuyBread(); }
+        if (YesOrNo() == true) { breadCart = ConsolidatedTerminal("BREAD"); }
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
         {
@@ -55,13 +60,12 @@ namespace Boulangerie
       }
       else if (selection == "BREAD" || selection == "B")
       {
-        breadCart = BuyBread();
+        breadCart = ConsolidatedTerminal("BREAD");
 
-        Console.WriteLine("Your bread total is $" + breadCart);
         Console.WriteLine("did you want some pastries too?");
         if (YesOrNo() == true)
         {
-          pastryCart = BuyPastries();
+          pastryCart = ConsolidatedTerminal("PASTRY");
         }
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)

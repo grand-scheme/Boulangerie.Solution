@@ -28,12 +28,12 @@ namespace Boulangerie
         if (input == "BREAD") 
         {
           Console.WriteLine("It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Do you want to add one more?");
-          quantity = YesOrNo() ? quantity++ : quantity;
+          quantity = YesOrNo() ? quantity + 1 : quantity;
         }
         else
         {
           Console.WriteLine("It's 'Buy three for $5` for our pastries. It's only a dollar to add one more to your bag. Do you want to add one more?");
-          quantity = YesOrNo() ? quantity++ : quantity;
+          quantity = YesOrNo() ? quantity + 1 : quantity;
         }
       }
       Console.WriteLine("Alright, so it looks like you're getting " + quantity + " " + pluralProducts + ".");
