@@ -18,12 +18,6 @@ namespace Boulangerie.Tests
       Assert.AreEqual(0, testDiscount.SetDiscount("BREAD"));
     }
     [TestMethod]
-    public void CheckVariables_CanEachUnitBoughtBeSetToCorrectValue_True()
-    {
-      BuyOneGetTwoX testValues = new BuyOneGetTwoX();
-      Assert.AreEqual(("BREAD 5 0 5 2 4 1"), testValues.CheckVariables(5, "BREAD"));
-    }
-    [TestMethod]
     public void TheEquation_DoesThisCalculateOut_True()
     {
     BuyOneGetTwoX testCart = new BuyOneGetTwoX();

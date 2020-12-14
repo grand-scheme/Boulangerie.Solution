@@ -4,41 +4,11 @@ namespace Boulangerie
   {
     public int SetPrice (string input)
     {
-      int price = (input == "BREAD") ? 5 : 2;
-      // int price = 100;
-      // if (input == "BREAD")
-      // { 
-      //   price = 5;
-      // }
-      // else 
-      // {
-      //   price = 2;
-      // }
-      return price;
+      return (input == "BREAD") ? 5 : 2;
     }
     public int SetDiscount (string input)
     {
-      int discount = (input == "BREAD") ? 0 : 1;
-      // int discount = 100;
-      // if (input == "BREAD")
-      // { 
-      //   discount = 0;
-      // }
-      // else 
-      // {
-      //   discount = 1;
-      // }
-      return discount;
-    }
-    public string CheckVariables (int number, string input)
-    {
-      int price = SetPrice(input);
-      int discount = SetDiscount(input);
-      int outsideDiscount = number % 3;
-      int buyTwo = ((number - outsideDiscount) * 2 / 3);
-      int fullPrice = buyTwo + outsideDiscount;
-      int getOne = ((number - outsideDiscount) / 3);
-    return input + " " + price + " " + discount + " " + number + " " + outsideDiscount + " " + fullPrice + " " + getOne; 
+      return (input == "BREAD") ? 0 : 1;
     }
     public int TheEquation (int number, string input)
     {
