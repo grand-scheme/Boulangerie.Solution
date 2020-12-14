@@ -52,12 +52,5 @@ namespace Boulangerie
         return pastryCost = PastryConsole();
       }
     }
-    
-
-
-
-
-
-
   }
 }
