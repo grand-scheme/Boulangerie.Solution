@@ -1,4 +1,4 @@
-namespace Boulangerie
+namespace Boulangerie.BreadModels
 {
   public abstract class BreadPrices
   {
@@ -22,7 +22,6 @@ namespace Boulangerie
       int WithinDealQuantity = breadQuantity - ExcessQuantity(breadQuantity);
       return (WithinDealQuantity / 3);
     }
-
     public int FullPriceQuantity(int breadQuantity)
     {
       return breadQuantity - AtDiscountQuantity(breadQuantity);
@@ -31,10 +30,10 @@ namespace Boulangerie
     {
       return 
       (
-        (FullPriceQuantity(breadQuantity) * FullPrice()) 
+        (FullPriceQuantity(breadQuantity) * FullPrice())
         +
         (AtDiscountQuantity(breadQuantity) * DiscountPrice())
-      );  
+      );
     }
   }
 }

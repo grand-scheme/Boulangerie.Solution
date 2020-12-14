@@ -1,6 +1,6 @@
-namespace Boulangerie
+namespace Boulangerie.PastryModels
 {
-    public abstract class PastryPrices
+  public abstract class PastryPrices
   {
     public int FullPrice()
     {
