@@ -28,7 +28,7 @@ namespace Boulangerie.Models.Tests
       Bread2 test3 = new Bread2();
       test3.SetQuantity(1);
       int test3Quantity = test3.GetBreadQuantity();
-      Assert.AreEqual(typeof(bool), test3Quantity.GetType());
+      Assert.AreEqual(typeof(int), test3Quantity.GetType());
     }
   }
 }
