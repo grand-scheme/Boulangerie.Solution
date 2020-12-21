@@ -28,10 +28,10 @@ namespace Boulangerie.Models.Tests
     public void ProductCart_CanReturnFinalCostIfInputIsBread_Int()
     {
       int quantity = 1;
-      string productType = "TYPE";
+      string productType = "BREAD";
       int testedOutput = this.testConsoleCalcs.ProductCart(quantity, productType);
       int expectedOutput = 5;
-      
+
       Assert.AreEqual(expectedOutput, testedOutput);
     }
   }
