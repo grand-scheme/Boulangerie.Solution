@@ -67,7 +67,7 @@ namespace Boulangerie.Models.Tests
     public void Pastry2_AbleToSetWithoutInt_Pastry2()
     {
       Pastry2 test7 = this.testPastry;
-      Assert.AreEqual(typeof(Pastry2), test7.GetType());
+      Assert.AreNotEqual(typeof(Pastry2), test7.GetType());
     }
     
     [TestMethod]
@@ -89,7 +89,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod]
     public void Pastry2_ReturnsSingularString_String()
     {
-      string expectedString = "loaf of bread";
+      string expectedString = "pastry";
       string testString = this.testPastry.Singular;
       Assert.AreEqual(expectedString, testString);
     }
@@ -97,7 +97,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod]
     public void Pastry2_ReturnsDealMinusOneString_String()
     {
-      string expectedString = "It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Why would you say no to free bread?";
+      string expectedString = "It's 'Buy three for $5` for our pastries. It's only a dollar to add one more to your bag. Do you want to add one more?";
       string testString = this.testPastry.DealMinusOne;
       Assert.AreEqual(expectedString, testString);
     }

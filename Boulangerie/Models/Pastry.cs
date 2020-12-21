@@ -12,7 +12,7 @@ namespace Boulangerie.Models
     {
       Product = "pastry";
       Plural = "pastries";
-      Singular = "pastries";
+      Singular = "pastry";
       DealMinusOne = "It's 'Buy three for $5` for our pastries. It's only a dollar to add one more to your bag. Do you want to add one more?";
     }
     public Pastry2(int quantity)
