@@ -4,6 +4,11 @@ namespace Boulangerie.Models
   {
     private int _breadQuantity {get; set;} 
     
+    public int BreadQuantity()
+    {
+      return _breadQuantity;
+    }
+    
     public void SetQuantity(int quantity)
     {
       _breadQuantity = quantity;
