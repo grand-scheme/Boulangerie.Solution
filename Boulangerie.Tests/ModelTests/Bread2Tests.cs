@@ -37,8 +37,19 @@ namespace Boulangerie.Models.Tests
       Bread2 test4 = new Bread2();
       test4.SetQuantity(1);
       int test4Price = test4.BreadTotalCost();
-      int expectedPrice = 10;
+      int expectedPrice = 5;
       Assert.AreEqual(expectedPrice, test4Price);
     }
+    // end of test 16
+    [TestMethod] // test 17
+    public void Bread2_BreadTotalCostReturnsCorrectPriceFor3_Int()
+    {
+      Bread2 test5 = new Bread2();
+      test5.SetQuantity(3);
+      int test5Price = test5.BreadTotalCost();
+      int expectedPrice = 10;
+      Assert.AreEqual(expectedPrice, test5Price);
+    }
+    // end test 17
   }
 }
