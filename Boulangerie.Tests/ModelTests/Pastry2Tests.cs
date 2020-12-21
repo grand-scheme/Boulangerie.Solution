@@ -1,18 +1,18 @@
-// using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// namespace Boulangerie.Models.Tests
-// {
-//   [TestClass]
-//   public class Pastry2Tests
-//   {
+namespace Boulangerie.Models.Tests
+{
+  [TestClass]
+  public class Pastry2Tests
+  {
 
-//     [TestMethod] // test 23
-//     public void Pastry2_CanInstantiateNewPastry2_GetType()
-//     {
-//       Pastry2 test1 = new Pastry2(5);
-//       Assert.AreEqual(typeof(Pastry2), test1.GetType());
-//     }
-//     // end of test 23
+    [TestMethod] // test 23
+    public void Pastry2_CanInstantiateNewPastry2_GetType()
+    {
+      Pastry2 test1 = new Pastry2(5);
+      Assert.AreEqual(typeof(Pastry), test1.GetType());
+    }
+    // end of test 23
 
 //     [TestMethod] // test 24
 //     public void Pastry2_CanGetAndSetQuantity_True()
@@ -61,5 +61,5 @@
 //       Assert.AreEqual(expectedPrice, test6Price);
 //     }
 //     // end test 28
-//   }
-// }
+  }
+}
