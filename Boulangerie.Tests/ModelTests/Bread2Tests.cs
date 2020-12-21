@@ -27,14 +27,13 @@ namespace Boulangerie.Models.Tests
       Bread2 test3 = new Bread2(5);
       // test3.SetQuantity(1);
       int test3Quantity = test3.BreadQuantity;
-      Assert.AreEqual(typeof(bool), test3Quantity.GetType());
+      Assert.AreEqual(typeof(int), test3Quantity.GetType());
     }
     // end of test 15
     [TestMethod] // test 16
     public void BreadTotalCost_ReturnsCorrectPrice_Int()
     {
-      Bread2 test4 = new Bread2(5);
-      // test4.SetQuantity(1);
+      Bread2 test4 = new Bread2(1);
       int test4Price = test4.BreadTotalCost();
       int expectedPrice = 5;
       Assert.AreEqual(expectedPrice, test4Price);
