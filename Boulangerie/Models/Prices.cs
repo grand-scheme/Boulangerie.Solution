@@ -44,9 +44,9 @@ namespace Boulangerie.Models
       return quantity - SoldAtDiscount(quantity);
     }
 
-    public int FinalCost(int quantity, string type)
+    public int FinalCost(int quantity, string productType)
     {
-      if (type == "bread")
+      if (productType == "BREAD")
       {
         return
         (
@@ -55,7 +55,7 @@ namespace Boulangerie.Models
           (SoldAtDiscount(quantity) * BreadDiscountPrice())
         );
       }
-      else // if (type == "pastry") 
+      else // if (type == "PASTRY") 
       {
         return 
         (

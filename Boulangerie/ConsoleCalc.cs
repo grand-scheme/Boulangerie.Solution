@@ -13,14 +13,17 @@ return question.YesOrNoQuestion();
 public int ProductCart(int quantity, string productType)
 {
   if (productType == "BREAD")
-{ 
-  Bread cartTotal = new Bread();
-  return cartTotal.BreadFinalCost(quantity);
+{
+    Buy2Get1 breadCartTotal = new Buy2Get1();
+    return breadCartTotal.FinalCost(quantity, productType);
+//   Bread cartTotal = new Bread();
+//   return cartTotal.BreadFinalCost(quantity);
 }
 else 
 { 
-  Pastry cartTotal = new Pastry();
-  return cartTotal.PastryFinalCost(quantity); 
+//   Pastry cartTotal = new Pastry();
+//   return cartTotal.PastryFinalCost(quantity); 
+    return 0;
   }
 }
 //     public int Purchases(string input)

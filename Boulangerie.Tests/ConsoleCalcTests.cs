@@ -13,7 +13,7 @@ namespace Boulangerie.Models.Tests
       string productType = "TYPE";
       int output = breadTest01.ProductCart(quantity, productType);
 
-      Assert.AreEqual(typeof(int), output.GetType());
+      Assert.AreEqual(typeof(bool), output.GetType());
     }
   }
 }
