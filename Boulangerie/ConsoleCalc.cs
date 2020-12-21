@@ -5,7 +5,7 @@ namespace Boulangerie
 {
 	public class ConsoleCalcs : FrequentCallback
 	{
-		private int inputQuantity(string minus, string single, string plural)
+		private int inputQuantity(string dealText, string single, string plural)
 		{
 			Console.WriteLine("How many " + plural + " would you like?");
 			int quantity = (int.TryParse(Console.ReadLine(), out quantity) && quantity > 0) ? quantity : 0;
@@ -13,7 +13,7 @@ namespace Boulangerie
 			if (quantity % 3 == 2)
 			{
 				Console.WriteLine("You only want " + quantity + "? You know we have a deal going on right now...");
-				Console.WriteLine(minus);
+				Console.WriteLine(dealText);
 				quantity = YesOrNo() ? quantity + 1 : quantity;
 			}
 			if (quantity == 1) 
@@ -35,7 +35,7 @@ namespace Boulangerie
 				bread = (Bread)Closeout(bread, bread.BreadTotalCost(), input);
 				return bread;
 			}
-			else // if (input == "PASTRY")
+			else // if (input.GetType() == typeof(Pastry))
 			{
 				Pastry pastry = new Pastry();
 				pastry.Quantity = inputQuantity(pastry.DealMinusOne, pastry.Singular, pastry.Plural);
@@ -58,5 +58,49 @@ namespace Boulangerie
 				return buyThis;
 			}
 		}
+		public bool EndOfTransaction(object bread, object pastry)
+    {
+      Bread testBread = (Bread)bread;
+      int breadQuantity = testBread.Quantity;
+      int breadPrice = testBread.BreadTotalCost();
+      
+      Pastry testPastry = (Pastry)pastry;
+      int pastryQuantity = testPastry.Quantity;
+      int pastryPrice = testPastry.PastryTotalCost();
+      
+      if ((breadQuantity == 0) && (pastryQuantity == 0)) 
+      { 
+        Console.WriteLine("Oh, you're funny.");
+        Console.WriteLine("Just for that, we have to do this all again.");
+        Console.WriteLine("I hope you're happy.");
+        LineBreak();
+        LineBreak();
+        LineBreak();
+        LineBreak();
+        return false;
+      }
+      else if ((breadQuantity  != 0) && (pastryQuantity != 0)) 
+      { 
+        Console.WriteLine("For " + testBread.Product + ", it looks like you're getting " + breadQuantity + " at " + breadPrice + ".");
+        Console.WriteLine("And for " + testPastry.Plural + ", it's " + pastryQuantity + " at " + pastryPrice + ".");
+        Console.WriteLine("Your grand total is $" + (breadPrice + pastryPrice)); 
+        LineBreak();
+        return true;
+      }
+      else if (breadQuantity  != 0) 
+      { 
+        Console.WriteLine("For " + testBread.Product + ", it looks like you're getting " + breadQuantity);
+        Console.WriteLine("Your total is $" + breadPrice); 
+        LineBreak();
+        return true;
+      }
+      else // if (pastryQuantity != 0) 
+      { 
+        Console.WriteLine("For " + testPastry.Plural + ", it looks like you're getting " + pastryQuantity);
+        Console.WriteLine("Your total is $" + pastryPrice); 
+        LineBreak();
+        return true;
+      }
+    }
 	}
 }

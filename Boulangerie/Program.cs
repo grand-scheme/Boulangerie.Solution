@@ -7,8 +7,8 @@ namespace Boulangerie
   {
     private static bool Checkout(object bread, object pastry)
     {
-      ConsoleBackground consoleBackground = new ConsoleBackground();
-      return consoleBackground.EndOfTransaction(bread, pastry);
+      ConsoleCalcs consoleCalc = new ConsoleCalcs();
+      return consoleCalc.EndOfTransaction(bread, pastry);
     }
 
     private static void Closer()
