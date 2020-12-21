@@ -16,14 +16,8 @@ namespace Boulangerie
 				Console.WriteLine(dealText);
 				quantity = YesOrNo() ? quantity + 1 : quantity;
 			}
-			if (quantity == 1) 
-			{
-				Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + single + ".");
-			}
-			else 
-			{
-				Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + plural + ".");
-			}
+			string matchNumber = (quantity != 1 ? plural : single);
+			Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + matchNumber + ".");
 			return quantity;
 		}
 		public object Purchases(object input)
@@ -63,10 +57,12 @@ namespace Boulangerie
       Bread testBread = (Bread)bread;
       int breadQuantity = testBread.Quantity;
       int breadPrice = testBread.BreadTotalCost();
+			string breadMatchNumber = (breadQuantity != 1 ? testBread.Plural : testBread.Singular);
       
       Pastry testPastry = (Pastry)pastry;
       int pastryQuantity = testPastry.Quantity;
       int pastryPrice = testPastry.PastryTotalCost();
+			string pastryMatchNumber = (pastryQuantity != 1 ? testPastry.Plural : testPastry.Singular);
       
       if ((breadQuantity == 0) && (pastryQuantity == 0)) 
       { 
@@ -81,22 +77,22 @@ namespace Boulangerie
       }
       else if ((breadQuantity  != 0) && (pastryQuantity != 0)) 
       { 
-        Console.WriteLine("For " + testBread.Product + ", it looks like you're getting " + breadQuantity + " at " + breadPrice + ".");
-        Console.WriteLine("And for " + testPastry.Plural + ", it's " + pastryQuantity + " at " + pastryPrice + ".");
+        Console.WriteLine("It looks like you're getting " + breadQuantity + breadMatchNumber + " at " + breadPrice + ".");
+        Console.WriteLine("And for it's " + pastryQuantity + pastryMatchNumber + " at " + pastryPrice + ".");
         Console.WriteLine("Your grand total is $" + (breadPrice + pastryPrice)); 
         LineBreak();
         return true;
       }
       else if (breadQuantity  != 0) 
       { 
-        Console.WriteLine("For " + testBread.Product + ", it looks like you're getting " + breadQuantity);
+        Console.WriteLine("It looks like you're getting " + breadQuantity + breadMatchNumber);
         Console.WriteLine("Your total is $" + breadPrice); 
         LineBreak();
         return true;
       }
       else // if (pastryQuantity != 0) 
       { 
-        Console.WriteLine("For " + testPastry.Plural + ", it looks like you're getting " + pastryQuantity);
+        Console.WriteLine("It looks like you're getting " + pastryQuantity + pastryMatchNumber);
         Console.WriteLine("Your total is $" + pastryPrice); 
         LineBreak();
         return true;
