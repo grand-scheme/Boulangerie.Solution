@@ -1,17 +1,6 @@
 namespace Boulangerie.Models
 {
-  public abstract class BreadPrices
-  {
-    public int FullPrice()
-    {
-      return 5;
-    }
-    public int DiscountPrice()
-    {
-      return 0;
-    }
-  }
-  public class Bread : BreadPrices
+  public class Bread : Prices
   {
     public int ExcessQuantity(int breadQuantity)
     {
@@ -30,9 +19,9 @@ namespace Boulangerie.Models
     {
       return 
       (
-        (FullPriceQuantity(breadQuantity) * FullPrice())
+        (FullPriceQuantity(breadQuantity) * BreadFullPrice())
         +
-        (AtDiscountQuantity(breadQuantity) * DiscountPrice())
+        (AtDiscountQuantity(breadQuantity) * BreadDiscountPrice())
       );
     }
   }
