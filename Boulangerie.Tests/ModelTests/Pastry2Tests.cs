@@ -57,7 +57,7 @@ namespace Boulangerie.Models.Tests
     {
       Pastry2 test6 = new Pastry2(10);
       int test6Price = test6.PastryTotalCost();
-      int expectedPrice = ((5+5+0) + (5+5+0) + (5+5+0) + (5));
+      int expectedPrice = ((2+2+1) + (2+2+1) + (2+2+1) + (2));
       Assert.AreEqual(expectedPrice, test6Price);
     }
     // end test 28
