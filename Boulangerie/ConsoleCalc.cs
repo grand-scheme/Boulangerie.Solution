@@ -3,18 +3,8 @@ using Boulangerie.Models;
 
 namespace Boulangerie
 {
-	public class ConsoleCalcs
+	public class ConsoleCalcs : FrequentCallback
 	{
-		public bool YesOrNo() 
-		{
-			ConsoleBackground consoleBackground = new ConsoleBackground();
-      return consoleBackground.YesOrNoQuestion();
-		}
-		public static void LineBreak()
-		{
-			ConsoleBackground consoleBackground = new ConsoleBackground();
-      consoleBackground.LineBreak();
-		}
 		private int inputQuantity(string minus, string single, string plural)
 		{
 			Console.WriteLine("How many " + plural + " would you like?");
@@ -36,22 +26,6 @@ namespace Boulangerie
 			}
 			return quantity;
 		}
-
-		private object Closeout(object buyThis, int productTotal, object input)
-		{
-			Console.WriteLine("For that, your total's going to be $" + productTotal + ".");
-			Console.WriteLine("Everything look good?");
-			if (YesOrNo() == false) 
-			{
-				Console.WriteLine("Okay, let's go back.");
-				LineBreak();
-				LineBreak();
-				buyThis = Purchases(input);
-			}
-			{
-				return buyThis;
-			}
-		}
 		public object Purchases(object input)
 		{
 			if (input.GetType() == typeof(Bread2))
@@ -67,6 +41,21 @@ namespace Boulangerie
 				pastry.Quantity = inputQuantity(pastry.DealMinusOne, pastry.Singular, pastry.Plural);
 				pastry = (Pastry2)Closeout(pastry, pastry.PastryTotalCost(), input);
 				return pastry;
+			}
+		}
+		private object Closeout(object buyThis, int productTotal, object input)
+		{
+			Console.WriteLine("For that, your total's going to be $" + productTotal + ".");
+			Console.WriteLine("Everything look good?");
+			if (YesOrNo() == false) 
+			{
+				Console.WriteLine("Okay, let's go back.");
+				LineBreak();
+				LineBreak();
+				buyThis = Purchases(input);
+			}
+			{
+				return buyThis;
 			}
 		}
 	}
