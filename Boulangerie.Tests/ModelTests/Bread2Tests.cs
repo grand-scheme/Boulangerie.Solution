@@ -18,8 +18,8 @@ namespace Boulangerie.Models.Tests
     {
       Bread2 test2 = new Bread2();
       test2.SetQuantity(5);
-      int testQuantity = test2.BreadQuantity();
-      Assert.AreEqual(4, testQuantity);
+      int testQuantity = test2.GetBreadQuantity();
+      Assert.AreEqual(5, testQuantity);
     }
   }
 }

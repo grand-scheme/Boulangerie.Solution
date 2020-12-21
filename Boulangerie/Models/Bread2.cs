@@ -4,7 +4,7 @@ namespace Boulangerie.Models
   {
     private int _breadQuantity {get; set;} 
     
-    public int BreadQuantity()
+    public int GetBreadQuantity()
     {
       return _breadQuantity;
     }
