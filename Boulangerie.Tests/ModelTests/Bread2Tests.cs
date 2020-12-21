@@ -42,8 +42,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod] // test 17
     public void BreadTotalCost_ReturnsCorrectPriceFor3_Int()
     {
-      Bread2 test5 = new Bread2(5);
-      // test5.SetQuantity(3);
+      Bread2 test5 = new Bread2(3);
       int test5Price = test5.BreadTotalCost();
       int expectedPrice = 10;
       Assert.AreEqual(expectedPrice, test5Price);
@@ -52,8 +51,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod] // test 18
     public void BreadTotalCost_ReturnsCorrectPriceFor10_Int()
     {
-      Bread2 test6 = new Bread2(5);
-      // test6.SetQuantity(10);
+      Bread2 test6 = new Bread2(10);
       int test6Price = test6.BreadTotalCost();
       // 10 loaves should = 
       // (3 loaves @ $10) * 3 = 9 loaves @ $30
