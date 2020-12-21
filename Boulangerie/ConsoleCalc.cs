@@ -3,73 +3,71 @@ using Boulangerie.Models;
 
 namespace Boulangerie
 {
-public class ConsoleCalcs
-{
-static bool YesOrNo() 
-{
-ConsoleBackground question = new ConsoleBackground();
-return question.YesOrNoQuestion();
-}
-public int ProductCart(int quantity, string productType)
-{
-if (productType == "BREAD")
-{
-    Bread2 breadCartTotal = new Bread2(quantity);
-    return breadCartTotal.BreadTotalCost();
-}
-else 
-{ 
-    Pastry2 pastryCartTotal = new Pastry2(quantity);
-    return pastryCartTotal.PastryTotalCost();
-}
-}
-//     public int Purchases(string input)
-//     {
-//       string product = (input == "BREAD") ? "bread" : "pastry";
-//       string pluralProducts = (input == "BREAD") ? "loaves of bread" : "pastries";
-//       string singleProduct = (input == "BREAD") ? "loaf of bread" : "pastry";
-//       Console.WriteLine("How many " + pluralProducts + " would you like?");
+	public class ConsoleCalcs
+	{
+		public bool YesOrNo() 
+		{
+			ConsoleBackground consoleBackground = new ConsoleBackground();
+      return consoleBackground.YesOrNoQuestion();
+		}
+		public static void LineBreak()
+		{
+			ConsoleBackground consoleBackground = new ConsoleBackground();
+      consoleBackground.LineBreak();
+		}
+		private int inputQuantity(string minus, string single, string plural)
+		{
+			Console.WriteLine("How many " + plural + " would you like?");
+			int quantity = (int.TryParse(Console.ReadLine(), out quantity) && quantity > 0) ? quantity : 0;
+			LineBreak();
+			if (quantity % 3 == 2)
+			{
+				Console.WriteLine("You only want " + quantity + "? You know we have a deal going on right now...");
+				Console.WriteLine(minus);
+				quantity = YesOrNo() ? quantity + 1 : quantity;
+			}
+			if (quantity == 1) 
+			{
+				Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + single + ".");
+			}
+			else 
+			{
+				Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + plural + ".");
+			}
+			return quantity;
+		}
 
-//       int quantity = (int.TryParse(Console.ReadLine(), out quantity) && quantity > 0) ? quantity : 0;
-//       Console.WriteLine(" ");
-//       if (quantity % 3 == 2)
-//       {
-//         Console.WriteLine("You only want " + quantity + "? You know we have a deal going on right now...");
-//         if (input == "BREAD") 
-//         {
-//           Console.WriteLine("It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Why would you say no to free bread?");
-//           quantity = YesOrNo() ? quantity + 1 : quantity;
-//         }
-//         else
-//         {
-//           Console.WriteLine("It's 'Buy three for $5` for our pastries. It's only a dollar to add one more to your bag. Do you want to add one more?");
-//           quantity = YesOrNo() ? quantity + 1 : quantity;
-//         }
-//       }
-//       Console.WriteLine(" ");
-//       if (quantity == 1) 
-//       {
-//         Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + singleProduct + ".");
-//       }
-//       else 
-//       {
-//         Console.WriteLine("Alright, it looks like you're getting " + quantity + " " + pluralProducts + ".");
-//       }
-//       int productTotal = ProductCart(quantity, input);
-//       Console.WriteLine("For that, your total's going to be $" + productTotal + ".");
-//       Console.WriteLine("Everything look good?");
-//       if (YesOrNo() == true) 
-//       {
-//         return productTotal;
-//       }
-//       else
-//       {
-//         Console.WriteLine("Okay, let's go back.");
-//         Console.WriteLine(" ");
-//         Console.WriteLine(" ");
-//         productTotal = Purchases(input);
-//         return productTotal;
-//       }
-//     }
-}
+		private object Closeout(object buyThis, int productTotal, object input)
+		{
+			Console.WriteLine("For that, your total's going to be $" + productTotal + ".");
+			Console.WriteLine("Everything look good?");
+			if (YesOrNo() == false) 
+			{
+				Console.WriteLine("Okay, let's go back.");
+				LineBreak();
+				LineBreak();
+				buyThis = Purchases(input);
+			}
+			{
+				return buyThis;
+			}
+		}
+		public object Purchases(object input)
+		{
+			if (input.GetType() == typeof(Bread2))
+			{
+				Bread2 bread = new Bread2();
+				bread.Quantity = inputQuantity(bread.DealMinusOne, bread.Singular, bread.Plural);
+				bread = (Bread2)Closeout(bread, bread.BreadTotalCost(), input);
+				return bread;
+			}
+			else // if (input == "PASTRY")
+			{
+				Pastry2 pastry = new Pastry2();
+				pastry.Quantity = inputQuantity(pastry.DealMinusOne, pastry.Singular, pastry.Plural);
+				pastry = (Pastry2)Closeout(pastry, pastry.PastryTotalCost(), input);
+				return pastry;
+			}
+		}
+	}
 }
