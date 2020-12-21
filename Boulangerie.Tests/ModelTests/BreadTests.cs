@@ -5,6 +5,13 @@ namespace Boulangerie.Models.Tests
   [TestClass]
   public class Bread2Tests
   {
+    Bread2 testBread;
+    
+    [TestInitialize()]
+    public void InitializeTests()
+    {
+      this.testBread = new Bread2();
+    }
     [TestMethod]
     public void Bread2_CanInstantiateNewBread2_GetType()
     {
@@ -57,7 +64,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod] //test 20
     public void Bread2_AbleToSetWithoutInt_Bread2()
     {
-      Bread2 test7 = new Bread2();
+      Bread2 test7 = this.testBread;
       Assert.AreNotEqual(typeof(Bread2), test7.GetType());
     }
   }
