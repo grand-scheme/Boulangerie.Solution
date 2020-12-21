@@ -21,5 +21,14 @@ namespace Boulangerie.Models.Tests
       int testQuantity = test2.GetBreadQuantity();
       Assert.AreEqual(5, testQuantity);
     }
+    // end of test 14
+    [TestMethod] // test 15
+    public void Bread2_BreadTotalCostReturnsNumber_Int()
+    {
+      Bread2 test3 = new Bread2();
+      test3.SetQuantity(1);
+      int test3Quantity = test3.GetBreadQuantity();
+      Assert.AreEqual(typeof(bool), test3Quantity.GetType());
+    }
   }
 }
