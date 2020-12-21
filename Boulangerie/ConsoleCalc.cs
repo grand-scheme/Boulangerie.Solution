@@ -1,28 +1,28 @@
-// using System;
-// using Boulangerie.Models;
+using System;
+using Boulangerie.Models;
 
-// namespace Boulangerie
-// {
-//   public class ConsoleCalcs
-//   {
-//     static bool YesOrNo() 
-//     {
-//       ConsoleBackground question = new ConsoleBackground();
-//       return question.YesOrNoQuestion();
-//     }
-    // static int ProductCart(int quantity, string productType)
-    // {
-    //   if (productType == "BREAD")
-    // { 
-    //   Bread cartTotal = new Bread();
-    //   return cartTotal.BreadFinalCost(quantity);
-    // }
-    // else 
-    // { 
-    //   Pastry cartTotal = new Pastry();
-    //   return cartTotal.PastryFinalCost(quantity); 
-    //   }
-    // }
+namespace Boulangerie
+{
+public class ConsoleCalcs
+{
+static bool YesOrNo() 
+{
+ConsoleBackground question = new ConsoleBackground();
+return question.YesOrNoQuestion();
+}
+public int ProductCart(int quantity, string productType)
+{
+  if (productType == "BREAD")
+{ 
+  Bread cartTotal = new Bread();
+  return cartTotal.BreadFinalCost(quantity);
+}
+else 
+{ 
+  Pastry cartTotal = new Pastry();
+  return cartTotal.PastryFinalCost(quantity); 
+  }
+}
 //     public int Purchases(string input)
 //     {
 //       string product = (input == "BREAD") ? "bread" : "pastry";
@@ -71,5 +71,5 @@
 //         return productTotal;
 //       }
 //     }
-//   }
-// }
+}
+}
