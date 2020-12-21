@@ -9,7 +9,7 @@ namespace Boulangerie.Models.Tests
     public void Bread2_CanInstantiateNewBread2_GetType()
     {
       Bread2 test1 = new Bread2(5);
-      Assert.AreEqual(typeof(Bread2), test1.GetType());
+      Assert.AreEqual(typeof(Bread), test1.GetType());
     }
     // end of test 13
 
@@ -19,7 +19,7 @@ namespace Boulangerie.Models.Tests
       Bread2 test2 = new Bread2(5);
       // test2.SetQuantity(5);
       int testQuantity = test2.BreadQuantity;
-      Assert.AreEqual(5, testQuantity);
+      Assert.AreEqual(10, testQuantity);
     }
     // end of test 14
     [TestMethod] // test 15
@@ -28,7 +28,7 @@ namespace Boulangerie.Models.Tests
       Bread2 test3 = new Bread2(5);
       // test3.SetQuantity(1);
       int test3Quantity = test3.BreadQuantity;
-      Assert.AreEqual(typeof(int), test3Quantity.GetType());
+      Assert.AreEqual(typeof(bool), test3Quantity.GetType());
     }
     // end of test 15
     [TestMethod] // test 16
