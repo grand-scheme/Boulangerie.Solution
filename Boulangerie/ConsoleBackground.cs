@@ -4,11 +4,11 @@ namespace Boulangerie
 {
   public abstract class ConsoleBackground
   {
-    public static void LineBreak()
+    protected static void LineBreak()
     {
       Console.WriteLine(" ");
     }
-    public static bool YesOrNo()
+    protected static bool YesOrNo()
     {
       Console.WriteLine("You can answer YES or NO");
       string confirmation = Console.ReadLine().ToUpper();

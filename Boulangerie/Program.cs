@@ -5,13 +5,13 @@ namespace Boulangerie
 {
   class ConsoleInterface : ConsoleBackground
   {
-    private static bool Checkout(object bread, object pastry)
+    private static bool _checkout(object bread, object pastry)
     {
       ConsoleCalcs consoleCalc = new ConsoleCalcs();
       return consoleCalc.EndOfTransaction(bread, pastry);
     }
 
-    private static void Closer()
+    private static void _closer()
     {
       Console.WriteLine("Great! We'll have those ready for you at 4 AM.");
       LineBreak();
@@ -63,13 +63,13 @@ namespace Boulangerie
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
         {
-          if (Checkout(buyBread, buyPastry) == false) 
+          if (_checkout(buyBread, buyPastry) == false) 
           { 
             Main(); 
           }
           else
           {
-            Closer();
+            _closer();
           }
         }
         else
@@ -92,13 +92,13 @@ namespace Boulangerie
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
         {
-          if (Checkout(buyBread, buyPastry) == false) 
+          if (_checkout(buyBread, buyPastry) == false) 
           { 
             Main(); 
           }
           else
           {
-            Closer();
+            _closer();
           }
         }
         else

@@ -14,14 +14,14 @@ namespace Boulangerie.Models.Tests
     }
 
     [TestMethod]
-    public void Pastry_CanInstantiateNewPastry_GetType()
+    public void Pastry_CanInstantiateNewPastry_GetTypePastry()
     {
       Pastry test1 = new Pastry(5);
       Assert.AreEqual(typeof(Pastry), test1.GetType());
     }
 
     [TestMethod]
-    public void Pastry_CanGetAndSetQuantity_True()
+    public void Pastry_CanGetAndSetQuantity_Int()
     {
       Pastry test2 = new Pastry(10);
       int testQuantity = test2.Quantity;
@@ -29,7 +29,7 @@ namespace Boulangerie.Models.Tests
     }
 
     [TestMethod]
-    public void PastryTotalCost_ReturnsNumber_Int()
+    public void PastryTotalCost_ReturnsNumber_GetTypeInt()
     {
       Pastry test3 = new Pastry(5);
       int test3Quantity = test3.Quantity;
@@ -64,7 +64,7 @@ namespace Boulangerie.Models.Tests
     }
 
         [TestMethod]
-    public void Pastry_AbleToSetWithoutInt_Pastry()
+    public void Pastry_AbleToSetWithoutPassingInt_GetTypePastry()
     {
       Pastry test7 = this.testPastry;
       Assert.AreEqual(typeof(Pastry), test7.GetType());

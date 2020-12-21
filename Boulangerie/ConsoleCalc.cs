@@ -5,7 +5,7 @@ namespace Boulangerie
 {
 	public class ConsoleCalcs : ConsoleBackground
 	{
-		private int inputQuantity(string dealText, string single, string plural)
+		private int _inputQuantity(string dealText, string single, string plural)
 		{
 			Console.WriteLine("How many " + plural + " would you like?");
 			int quantity = (int.TryParse(Console.ReadLine(), out quantity) && quantity > 0) ? quantity : 0;
@@ -25,19 +25,19 @@ namespace Boulangerie
 			if (input.GetType() == typeof(Bread))
 			{
 				Bread bread = new Bread();
-				bread.Quantity = inputQuantity(bread.DealMinusOne, bread.Singular, bread.Plural);
-				bread = (Bread)Closeout(bread, bread.BreadTotalCost(), input);
+				bread.Quantity = _inputQuantity(bread.DealMinusOne, bread.Singular, bread.Plural);
+				bread = (Bread)_closeout(bread, bread.BreadTotalCost(), input);
 				return bread;
 			}
 			else // if (input.GetType() == typeof(Pastry))
 			{
 				Pastry pastry = new Pastry();
-				pastry.Quantity = inputQuantity(pastry.DealMinusOne, pastry.Singular, pastry.Plural);
-				pastry = (Pastry)Closeout(pastry, pastry.PastryTotalCost(), input);
+				pastry.Quantity = _inputQuantity(pastry.DealMinusOne, pastry.Singular, pastry.Plural);
+				pastry = (Pastry)_closeout(pastry, pastry.PastryTotalCost(), input);
 				return pastry;
 			}
 		}
-		private object Closeout(object buyThis, int productTotal, object input)
+		private object _closeout(object buyThis, int productTotal, object input)
 		{
 			Console.WriteLine("For that, your total's going to be $" + productTotal + ".");
 			Console.WriteLine("Everything look good?");

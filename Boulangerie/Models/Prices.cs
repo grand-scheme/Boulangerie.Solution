@@ -10,16 +10,16 @@ namespace Boulangerie.Models
 
   public class Buy2Get1 : Prices
   {
-    int SoldAtDiscount(int quantity)
+    private int _soldAtDiscount(int quantity)
     {
       int outsideDiscount = (quantity % 3);
       int insideDiscount = (quantity - outsideDiscount);
       return (insideDiscount / 3);
     }
 
-    int SoldAtFullPrice(int quantity)
+    private int _soldAtFullPrice(int quantity)
     {
-      return (quantity - SoldAtDiscount(quantity));
+      return (quantity - _soldAtDiscount(quantity));
     }
 
     public int FinalCost(int quantity, string productType)
@@ -28,18 +28,18 @@ namespace Boulangerie.Models
       {
         return
         (
-          (SoldAtFullPrice(quantity) * BreadFullPrice())
+          (_soldAtFullPrice(quantity) * BreadFullPrice())
           +
-          (SoldAtDiscount(quantity) * BreadDiscountPrice())
+          (_soldAtDiscount(quantity) * BreadDiscountPrice())
         );
       }
       else // if (type == "PASTRY") 
       {
         return 
         (
-          (SoldAtFullPrice(quantity) * PastryFullPrice()) 
+          (_soldAtFullPrice(quantity) * PastryFullPrice()) 
           +
-          (SoldAtDiscount(quantity) * PastryDiscountPrice())
+          (_soldAtDiscount(quantity) * PastryDiscountPrice())
         );
       }
     }

@@ -29,7 +29,7 @@ namespace Boulangerie.Models.Tests
     }
 
     [TestMethod]
-    public void TotalCost_ReturnsNumber_Int()
+    public void BreadTotalCost_ReturnsNumber_Int()
     {
       Bread test3 = new Bread(5);
       int test3Quantity = test3.Quantity;
@@ -64,7 +64,7 @@ namespace Boulangerie.Models.Tests
     }
 
     [TestMethod]
-    public void Bread_AbleToSetWithoutInt_Bread()
+    public void Bread_AbleToSetWithoutPassingInt_GetTypeBread()
     {
       Bread test7 = this.testBread;
       Assert.AreEqual(typeof(Bread), test7.GetType());
