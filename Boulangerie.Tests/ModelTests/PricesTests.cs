@@ -18,9 +18,18 @@ namespace Boulangerie.Models.Tests
     {
       Buy2Get1 dummy = new Buy2Get1();
       int test20 = dummy.GetSoldAtDiscount(3);
-      int expectedQuantity = 3;
+      int expectedQuantity = 1;
       Assert.AreEqual(expectedQuantity, test20);
     }
     // end of test 20
+    [TestMethod] // test 21
+    public void GetSoldAtDiscount_ReturnsQuantityWhenInBulk_Int()
+    {
+      Buy2Get1 dummy = new Buy2Get1();
+      int test21 = dummy.GetSoldAtDiscount(32);
+      int expectedQuantity = 1;
+      Assert.AreEqual(expectedQuantity, test21);
+    }
+    // end of test 21
   }
 }
