@@ -10,27 +10,27 @@ namespace Boulangerie.Models.Tests
     public void Pastry2_CanInstantiateNewPastry2_GetType()
     {
       Pastry2 test1 = new Pastry2(5);
-      Assert.AreEqual(typeof(Pastry), test1.GetType());
+      Assert.AreEqual(typeof(Pastry2), test1.GetType());
     }
     // end of test 23
 
-//     [TestMethod] // test 24
-//     public void Pastry2_CanGetAndSetQuantity_True()
-//     {
-//       Pastry2 test2 = new Pastry2(10);
-//       int testQuantity = test2.PastryQuantity;
-//       Assert.AreEqual(10, testQuantity);
-//     }
-//     // end of test 24
+    [TestMethod] // test 24
+    public void Pastry2_CanGetAndSetQuantity_True()
+    {
+      Pastry2 test2 = new Pastry2(10);
+      int testQuantity = test2.PastryQuantity;
+      Assert.AreEqual(10, testQuantity);
+    }
+    // end of test 24
 
-//     [TestMethod] // test 25
-//     public void PastryTotalCost_ReturnsNumber_Int()
-//     {
-//       Pastry2 test3 = new Pastry2(5);
-//       int test3Quantity = test3.PastryQuantity;
-//       Assert.AreEqual(typeof(int), test3Quantity.GetType());
-//     }
-//     // end of test 25
+    [TestMethod] // test 25
+    public void PastryTotalCost_ReturnsNumber_Int()
+    {
+      Pastry2 test3 = new Pastry2(5);
+      int test3Quantity = test3.PastryQuantity;
+      Assert.AreEqual(typeof(int), test3Quantity.GetType());
+    }
+    // end of test 25
 
 //     [TestMethod] // test 26
 //     public void PastryTotalCost_ReturnsCorrectPrice_Int()
