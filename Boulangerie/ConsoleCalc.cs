@@ -16,15 +16,15 @@ public int ProductCart(int quantity, string productType)
 {
     Buy2Get1 breadCartTotal = new Buy2Get1();
     return breadCartTotal.FinalCost(quantity, productType);
-//   Bread cartTotal = new Bread();
-//   return cartTotal.BreadFinalCost(quantity);
 }
 else 
 { 
+    Buy2Get1 pastryCartTotal = new Buy2Get1();
+    return pastryCartTotal.FinalCost(quantity, productType);
 //   Pastry cartTotal = new Pastry();
 //   return cartTotal.PastryFinalCost(quantity); 
-    return 0;
-  }
+// return 0;
+}
 }
 //     public int Purchases(string input)
 //     {
