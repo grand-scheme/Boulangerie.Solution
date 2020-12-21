@@ -12,6 +12,7 @@ namespace Boulangerie.Models.Tests
     {
       this.testBread = new Bread2();
     }
+
     [TestMethod]
     public void Bread2_CanInstantiateNewBread2_GetType()
     {
@@ -61,44 +62,44 @@ namespace Boulangerie.Models.Tests
       int expectedPrice = ((5+5+0) + (5+5+0) + (5+5+0) + (5));
       Assert.AreEqual(expectedPrice, test6Price);
     }
-    [TestMethod] //test 20
+
+    [TestMethod]
     public void Bread2_AbleToSetWithoutInt_Bread2()
     {
       Bread2 test7 = this.testBread;
       Assert.AreEqual(typeof(Bread2), test7.GetType());
     }
-    // end 20
-    [TestMethod] // test 21
+    
+    [TestMethod]
     public void Bread2_ReturnsProductString_String()
     {
       string expectedString = "bread";
       string testString = this.testBread.Product;
       Assert.AreEqual(expectedString, testString);
     }
-    // end 21
-    [TestMethod] // test 22
+    
+    [TestMethod]
     public void Bread2_ReturnsPluralString_String()
     {
-      string expectedString = "bread";
+      string expectedString = "loaves of bread";
       string testString = this.testBread.Plural;
       Assert.AreEqual(expectedString, testString);
     }
-    // end 22
-    [TestMethod] // test 23
+    
+    [TestMethod]
     public void Bread2_ReturnsSingularString_String()
     {
-      string expectedString = "breads";
+      string expectedString = "loaf of bread";
       string testString = this.testBread.Singular;
       Assert.AreEqual(expectedString, testString);
     }
-    // end 23
-    [TestMethod] // test 24
+    
+    [TestMethod]
     public void Bread2_ReturnsDealMinusOneString_String()
     {
-      string expectedString = "breads";
+      string expectedString = "It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Why would you say no to free bread?";
       string testString = this.testBread.DealMinusOne;
       Assert.AreEqual(expectedString, testString);
     }
-    // end 24
   }
 }
