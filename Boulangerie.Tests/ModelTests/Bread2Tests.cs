@@ -5,6 +5,7 @@ namespace Boulangerie.Models.Tests
   [TestClass]
   public class Bread2Tests
   {
+
     [TestMethod] // test 13
     public void Bread2_CanInstantiateNewBread2_GetType()
     {
@@ -21,15 +22,16 @@ namespace Boulangerie.Models.Tests
       Assert.AreEqual(10, testQuantity);
     }
     // end of test 14
+
     [TestMethod] // test 15
     public void BreadTotalCost_ReturnsNumber_Int()
     {
       Bread2 test3 = new Bread2(5);
-      // test3.SetQuantity(1);
       int test3Quantity = test3.BreadQuantity;
       Assert.AreEqual(typeof(int), test3Quantity.GetType());
     }
     // end of test 15
+
     [TestMethod] // test 16
     public void BreadTotalCost_ReturnsCorrectPrice_Int()
     {
@@ -39,6 +41,7 @@ namespace Boulangerie.Models.Tests
       Assert.AreEqual(expectedPrice, test4Price);
     }
     // end of test 16
+
     [TestMethod] // test 17
     public void BreadTotalCost_ReturnsCorrectPriceFor3_Int()
     {
@@ -48,15 +51,13 @@ namespace Boulangerie.Models.Tests
       Assert.AreEqual(expectedPrice, test5Price);
     }
     // end test 17
+
     [TestMethod] // test 18
     public void BreadTotalCost_ReturnsCorrectPriceFor10_Int()
     {
       Bread2 test6 = new Bread2(10);
       int test6Price = test6.BreadTotalCost();
-      // 10 loaves should = 
-      // (3 loaves @ $10) * 3 = 9 loaves @ $30
-      // + 1 loaf @ $5 = $35
-      int expectedPrice = 35;
+      int expectedPrice = ((5+5+0) + (5+5+0) + (5+5+0) + (5));
       Assert.AreEqual(expectedPrice, test6Price);
     }
     // end test 18
