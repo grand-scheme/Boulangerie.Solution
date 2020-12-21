@@ -5,6 +5,13 @@ namespace Boulangerie.Models.Tests
   [TestClass]
   public class Pastry2Tests
   {
+    Pastry2 testPastry;
+    
+    [TestInitialize()]
+    public void InitializeTests()
+    {
+      this.testPastry = new Pastry2();
+    }
 
     [TestMethod]
     public void Pastry2_CanInstantiateNewPastry2_GetType()
@@ -17,7 +24,7 @@ namespace Boulangerie.Models.Tests
     public void Pastry2_CanGetAndSetQuantity_True()
     {
       Pastry2 test2 = new Pastry2(10);
-      int testQuantity = test2.PastryQuantity;
+      int testQuantity = test2.Quantity;
       Assert.AreEqual(10, testQuantity);
     }
 
@@ -25,7 +32,7 @@ namespace Boulangerie.Models.Tests
     public void PastryTotalCost_ReturnsNumber_Int()
     {
       Pastry2 test3 = new Pastry2(5);
-      int test3Quantity = test3.PastryQuantity;
+      int test3Quantity = test3.Quantity;
       Assert.AreEqual(typeof(int), test3Quantity.GetType());
     }
 
@@ -54,6 +61,45 @@ namespace Boulangerie.Models.Tests
       int test6Price = test6.PastryTotalCost();
       int expectedPrice = ((2+2+1) + (2+2+1) + (2+2+1) + (2));
       Assert.AreEqual(expectedPrice, test6Price);
+    }
+
+        [TestMethod]
+    public void Pastry2_AbleToSetWithoutInt_Pastry2()
+    {
+      Pastry2 test7 = this.testPastry;
+      Assert.AreEqual(typeof(Pastry2), test7.GetType());
+    }
+    
+    [TestMethod]
+    public void Pastry2_ReturnsProductString_String()
+    {
+      string expectedString = "bread";
+      string testString = this.testPastry.Product;
+      Assert.AreEqual(expectedString, testString);
+    }
+    
+    [TestMethod]
+    public void Pastry2_ReturnsPluralString_String()
+    {
+      string expectedString = "loaves of bread";
+      string testString = this.testPastry.Plural;
+      Assert.AreEqual(expectedString, testString);
+    }
+    
+    [TestMethod]
+    public void Pastry2_ReturnsSingularString_String()
+    {
+      string expectedString = "loaf of bread";
+      string testString = this.testPastry.Singular;
+      Assert.AreEqual(expectedString, testString);
+    }
+    
+    [TestMethod]
+    public void Pastry2_ReturnsDealMinusOneString_String()
+    {
+      string expectedString = "It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Why would you say no to free bread?";
+      string testString = this.testPastry.DealMinusOne;
+      Assert.AreEqual(expectedString, testString);
     }
   }
 }
