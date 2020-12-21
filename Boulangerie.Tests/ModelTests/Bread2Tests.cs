@@ -60,7 +60,7 @@ namespace Boulangerie.Models.Tests
       // 10 loaves should = 
       // (3 loaves @ $10) * 3 = 9 loaves @ $30
       // + 1 loaf @ $5 = $35
-      int expectedPrice = 10;
+      int expectedPrice = 35;
       Assert.AreEqual(expectedPrice, test6Price);
     }
     // end test 18
