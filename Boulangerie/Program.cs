@@ -33,7 +33,7 @@ namespace Boulangerie
     static void Main()
     {
       ConsoleCalcs consoleCalc = new ConsoleCalcs();
-      Bread2 buyBread = new Bread2();
+      Bread buyBread = new Bread();
       Pastry buyPastry = new Pastry();
       
       Console.WriteLine("╔═══════════════════════════════════════════╗");
@@ -55,7 +55,7 @@ namespace Boulangerie
         buyPastry = (Pastry)consoleCalc.Purchases(buyPastry);
         LineBreak();
         Console.WriteLine("Would you like some bread as well?");
-        if (YesOrNo() == true) { buyBread = (Bread2)consoleCalc.Purchases(buyBread); }
+        if (YesOrNo() == true) { buyBread = (Bread)consoleCalc.Purchases(buyBread); }
         LineBreak();
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
@@ -78,7 +78,7 @@ namespace Boulangerie
       }
       else if (selection == "BREAD" || selection == "B")
       {
-        buyBread = (Bread2)consoleCalc.Purchases(buyBread);
+        buyBread = (Bread)consoleCalc.Purchases(buyBread);
         LineBreak();
         Console.WriteLine("Would you like some pastries too?");
         if (YesOrNo() == true)

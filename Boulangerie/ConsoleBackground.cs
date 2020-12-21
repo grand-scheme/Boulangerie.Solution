@@ -35,7 +35,7 @@ namespace Boulangerie
   {
     public bool EndOfTransaction(object bread, object pastry)
     {
-      Bread2 testBread = (Bread2)bread;
+      Bread testBread = (Bread)bread;
       int breadQuantity = testBread.Quantity;
       int breadPrice = testBread.BreadTotalCost();
       

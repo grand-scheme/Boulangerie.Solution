@@ -3,27 +3,27 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Boulangerie.Models.Tests
 {
   [TestClass]
-  public class Bread2Tests
+  public class BreadTests
   {
-    Bread2 testBread;
+    Bread testBread;
     
     [TestInitialize()]
     public void InitializeTests()
     {
-      this.testBread = new Bread2();
+      this.testBread = new Bread();
     }
 
     [TestMethod]
-    public void Bread2_CanInstantiateNewBread2_GetType()
+    public void Bread_CanInstantiateNewBread_GetType()
     {
-      Bread2 test1 = new Bread2(5);
-      Assert.AreEqual(typeof(Bread2), test1.GetType());
+      Bread test1 = new Bread(5);
+      Assert.AreEqual(typeof(Bread), test1.GetType());
     }
 
     [TestMethod]
-    public void Bread2_CanGetAndSetQuantity_True()
+    public void Bread_CanGetAndSetQuantity_True()
     {
-      Bread2 test2 = new Bread2(10);
+      Bread test2 = new Bread(10);
       int testQuantity = test2.Quantity;
       Assert.AreEqual(10, testQuantity);
     }
@@ -31,7 +31,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod]
     public void TotalCost_ReturnsNumber_Int()
     {
-      Bread2 test3 = new Bread2(5);
+      Bread test3 = new Bread(5);
       int test3Quantity = test3.Quantity;
       Assert.AreEqual(typeof(int), test3Quantity.GetType());
     }
@@ -39,7 +39,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod]
     public void BreadTotalCost_ReturnsCorrectPrice_Int()
     {
-      Bread2 test4 = new Bread2(1);
+      Bread test4 = new Bread(1);
       int test4Price = test4.BreadTotalCost();
       int expectedPrice = 5;
       Assert.AreEqual(expectedPrice, test4Price);
@@ -48,7 +48,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod]
     public void BreadTotalCost_ReturnsCorrectPriceFor3_Int()
     {
-      Bread2 test5 = new Bread2(3);
+      Bread test5 = new Bread(3);
       int test5Price = test5.BreadTotalCost();
       int expectedPrice = 10;
       Assert.AreEqual(expectedPrice, test5Price);
@@ -57,21 +57,21 @@ namespace Boulangerie.Models.Tests
     [TestMethod]
     public void BreadTotalCost_ReturnsCorrectPriceFor10_Int()
     {
-      Bread2 test6 = new Bread2(10);
+      Bread test6 = new Bread(10);
       int test6Price = test6.BreadTotalCost();
       int expectedPrice = ((5+5+0) + (5+5+0) + (5+5+0) + (5));
       Assert.AreEqual(expectedPrice, test6Price);
     }
 
     [TestMethod]
-    public void Bread2_AbleToSetWithoutInt_Bread2()
+    public void Bread_AbleToSetWithoutInt_Bread()
     {
-      Bread2 test7 = this.testBread;
-      Assert.AreEqual(typeof(Bread2), test7.GetType());
+      Bread test7 = this.testBread;
+      Assert.AreEqual(typeof(Bread), test7.GetType());
     }
     
     [TestMethod]
-    public void Bread2_ReturnsProductString_String()
+    public void Bread_ReturnsProductString_String()
     {
       string expectedString = "bread";
       string testString = this.testBread.Product;
@@ -79,7 +79,7 @@ namespace Boulangerie.Models.Tests
     }
     
     [TestMethod]
-    public void Bread2_ReturnsPluralString_String()
+    public void Bread_ReturnsPluralString_String()
     {
       string expectedString = "loaves of bread";
       string testString = this.testBread.Plural;
@@ -87,7 +87,7 @@ namespace Boulangerie.Models.Tests
     }
     
     [TestMethod]
-    public void Bread2_ReturnsSingularString_String()
+    public void Bread_ReturnsSingularString_String()
     {
       string expectedString = "loaf of bread";
       string testString = this.testBread.Singular;
@@ -95,7 +95,7 @@ namespace Boulangerie.Models.Tests
     }
     
     [TestMethod]
-    public void Bread2_ReturnsDealMinusOneString_String()
+    public void Bread_ReturnsDealMinusOneString_String()
     {
       string expectedString = "It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Why would you say no to free bread?";
       string testString = this.testBread.DealMinusOne;

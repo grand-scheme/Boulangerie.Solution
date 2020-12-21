@@ -28,11 +28,11 @@ namespace Boulangerie
 		}
 		public object Purchases(object input)
 		{
-			if (input.GetType() == typeof(Bread2))
+			if (input.GetType() == typeof(Bread))
 			{
-				Bread2 bread = new Bread2();
+				Bread bread = new Bread();
 				bread.Quantity = inputQuantity(bread.DealMinusOne, bread.Singular, bread.Plural);
-				bread = (Bread2)Closeout(bread, bread.BreadTotalCost(), input);
+				bread = (Bread)Closeout(bread, bread.BreadTotalCost(), input);
 				return bread;
 			}
 			else // if (input == "PASTRY")

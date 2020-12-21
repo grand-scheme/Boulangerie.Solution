@@ -1,6 +1,6 @@
 namespace Boulangerie.Models
 {
-  public class Bread2
+  public class Bread
   {
     public int Quantity { get; set; }
     public string Product { get; }
@@ -8,14 +8,14 @@ namespace Boulangerie.Models
     public string Singular { get; }
     public string DealMinusOne { get; }
     
-    public Bread2()
+    public Bread()
     {
       Product = "bread";
       Plural = "loaves of bread";
       Singular = "loaf of bread";
       DealMinusOne = "It's 'Buy two, get one free' for our bread. If you add one more, it's on the house. Why would you say no to free bread?";
     }
-    public Bread2(int quantity)
+    public Bread(int quantity)
     : this()
     {
       Quantity = quantity;
