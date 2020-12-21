@@ -98,7 +98,7 @@ None currently known.
  While you do not have to have this specific version installed locally, compatibility cannot be guaranteed with earlier or later releases of the .NET core. 
 
 ##### To view locally on your machine:  
-1. Find the green **Code** button above the file list on this project's [main GitHub repository page](https://github.com/grand-scheme/csharp-boulangerie).
+1. Find the green **Code** button above the file list on this project's [main GitHub repository page](https://github.com/grand-scheme/boulangerie.solution).
 2. Select the button to open a drop-down menu. Select "Open with GitHub Desktop" or, if you do not have this program installed, download the compressed .zip file.
 3. Extract the .zip file to your local machine.
 4. Directions were accurate as of December 11th, 2020. If GitHub has since changed their protocol, please see [the GitHub help docs](https://docs.github.com/en) for up-to-date information.
@@ -110,20 +110,23 @@ None currently known.
 2. Navigate to the containing directory into which you would like to clone this project.
 
 3. Input:\
-`$ git clone https://github.com/grand-scheme/csharp-boulangerie`
+`$ git clone https://github.com/grand-scheme/boulangerie.solution`
 
-4. This will clone the project to a folder called "csharp-boulangerie." If you wish to clone it into a directory of a different name, append the new folder name to the end of the string, like so:\
-`$ git clone https://github.com/grand-scheme/csharp-boulangerie NEW-FOLDER`\
-where `NEW-FOLDER` is where you would type the name of the folder you would like to use.  
+4. This will clone the project to a folder called "boulangerie.solution." If you wish to clone it into a directory of a different name, append the new folder name to the end of the string, like so:\
+`$ git clone https://github.com/grand-scheme/boulangerie.solution NEW-FOLDER`\
+where `NEW-FOLDER` is where you would type the name of the folder you would like to use.\
+**Note:** It is highly recommended that your destination folder retains the name `boulangerie.solution`.  
 
 5. Directions were accurate as of Dec. 11th, 2020. If GitHub has since changed their protocol, please see [the GitHub help docs](https://docs.github.com/en) for up-to-date information.
 
 #### To run this project on your machine:
-1. Once you have the project locally stored, navigate to its main directory in your terminal of choice. By default, this is `csharp-boulangerie`. 
+1. Once you have the project locally stored, navigate to its main directory in your terminal of choice. By default, this is `boulangerie.solution`. 
 
 2. Navigate to the subfolder `Boulangerie`.
 
 3. In your command line, input\
+`$ dotnet restore`\
+`$ dotnet build`\
 `$ dotnet run`
 
 4. If all goes well, Pierre should greet you in the command console itself. 
