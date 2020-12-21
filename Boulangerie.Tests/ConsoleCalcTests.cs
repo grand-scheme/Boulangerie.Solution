@@ -34,5 +34,17 @@ namespace Boulangerie.Models.Tests
 
       Assert.AreEqual(expectedOutput, testedOutput);
     }
+    // end of test 18
+    [TestMethod] // test 19
+    public void ProductCart_CanReturnFinalCostIfInputIsPastry_Int()
+    {
+      int quantity = 1;
+      string productType = "PASTRY";
+      int testedOutput = this.testConsoleCalcs.ProductCart(quantity, productType);
+      int expectedOutput = 2;
+
+      Assert.AreEqual(expectedOutput, testedOutput);
+    }
+    // end of test 19
   }
 }
