@@ -77,22 +77,22 @@ namespace Boulangerie
       }
       else if ((breadQuantity  != 0) && (pastryQuantity != 0)) 
       { 
-        Console.WriteLine("It looks like you're getting " + breadQuantity + breadMatchNumber + " at " + breadPrice + ".");
-        Console.WriteLine("And it's " + pastryQuantity + pastryMatchNumber + " at " + pastryPrice + ".");
+        Console.WriteLine("It looks like you're getting " + breadQuantity + " " + breadMatchNumber + " at " + breadPrice + ".");
+        Console.WriteLine("And it's " + pastryQuantity + " " + pastryMatchNumber + " at " + pastryPrice + ".");
         Console.WriteLine("Your grand total is $" + (breadPrice + pastryPrice)); 
         LineBreak();
         return true;
       }
       else if (breadQuantity  != 0) 
       { 
-        Console.WriteLine("It looks like you're getting " + breadQuantity + breadMatchNumber);
+        Console.WriteLine("It looks like you're getting " + breadQuantity + " " + breadMatchNumber);
         Console.WriteLine("Your total is $" + breadPrice); 
         LineBreak();
         return true;
       }
       else // if (pastryQuantity != 0) 
       { 
-        Console.WriteLine("It looks like you're getting " + pastryQuantity + pastryMatchNumber);
+        Console.WriteLine("It looks like you're getting " + pastryQuantity + " " + pastryMatchNumber);
         Console.WriteLine("Your total is $" + pastryPrice); 
         LineBreak();
         return true;

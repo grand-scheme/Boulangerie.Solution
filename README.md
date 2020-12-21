@@ -125,16 +125,26 @@ where `NEW-FOLDER` is where you would type the name of the folder you would like
 2. Navigate to the subfolder `Boulangerie`.
 
 3. In your command line, input\
-`$ dotnet build`\
+`$ dotnet build`
+
+4. Navigate to the subfolder `Boulangerie.Tests`.\
+From step 3, you can do that by entering the following into your command line:\
+`cd ../Boulangerie.Tests`
+
+5. Input:\
+`$ dotnet build`
+
+6. Navigate back to subfolder `Boulangerie`\
+`cd ../Boulangerie`\
 `$ dotnet run`
 
-4. If all goes well, Pierre should greet you in the command console itself. 
+7. If all goes well, Pierre should greet you in the command console itself. 
 
 ##### To engage with the test suite:
 > Note: it is recommended to run the project and the previously-enumerated dotnet commands before engaging with the test suite.
 1. Navigate to the main directory in your terminal of choice. By default, this is `Boulangerie.Solution`.
 
-2. Navigate to the subfolder `Boulangerie.Tests`.
+2. Navigate to the ubfolder `Boulangerie.Tests`.
 
 3. In your command line, input\
 `$ dotnet test`
