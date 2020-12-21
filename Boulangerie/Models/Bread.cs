@@ -1,4 +1,4 @@
-namespace Boulangerie.BreadModels
+namespace Boulangerie.Models
 {
   public abstract class BreadPrices
   {

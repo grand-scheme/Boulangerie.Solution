@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Boulangerie.PastryModels.Tests
+namespace Boulangerie.Models.Tests
 {
   [TestClass]
   public class PastryTests 

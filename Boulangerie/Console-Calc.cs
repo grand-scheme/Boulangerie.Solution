@@ -1,6 +1,5 @@
 using System;
-using Boulangerie.BreadModels;
-using Boulangerie.PastryModels;
+using Boulangerie.Models;
 
 namespace Boulangerie
 {
