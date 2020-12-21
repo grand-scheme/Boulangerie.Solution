@@ -6,6 +6,7 @@ namespace Boulangerie.Models.Tests
   public class PricesTests
   {
     Buy2Get1 testB2G1;
+    
     [TestInitialize()]
     public void InitializeTests()
     {
