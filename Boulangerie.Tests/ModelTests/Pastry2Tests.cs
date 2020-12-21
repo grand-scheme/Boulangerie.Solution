@@ -42,15 +42,15 @@ namespace Boulangerie.Models.Tests
     }
     // end of test 26
 
-//     [TestMethod] // test 27
-//     public void PastryTotalCost_ReturnsCorrectPriceFor3_Int()
-//     {
-//       Pastry2 test5 = new Pastry2(3);
-//       int test5Price = test5.PastryTotalCost();
-//       int expectedPrice = 10;
-//       Assert.AreEqual(expectedPrice, test5Price);
-//     }
-//     // end test 27
+    [TestMethod] // test 27
+    public void PastryTotalCost_ReturnsCorrectPriceFor3_Int()
+    {
+      Pastry2 test5 = new Pastry2(3);
+      int test5Price = test5.PastryTotalCost();
+      int expectedPrice = 10;
+      Assert.AreEqual(expectedPrice, test5Price);
+    }
+    // end test 27
 
 //     [TestMethod] // test 28
 //     public void PastryTotalCost_ReturnsCorrectPriceFor10_Int()
