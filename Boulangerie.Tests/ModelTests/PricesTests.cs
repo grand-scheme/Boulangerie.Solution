@@ -10,7 +10,7 @@ namespace Boulangerie.Models.Tests
     {
       Buy2Get1 dummy = new Buy2Get1();
       int test19 = dummy.GetSoldAtDiscount(3);
-      Assert.AreEqual(typeof(bool), test19.GetType());
+      Assert.AreEqual(typeof(int), test19.GetType());
     }
     // end of test 19
   }
