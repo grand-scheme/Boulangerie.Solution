@@ -37,9 +37,9 @@ namespace Boulangerie
 			}
 			else // if (input == "PASTRY")
 			{
-				Pastry2 pastry = new Pastry2();
+				Pastry pastry = new Pastry();
 				pastry.Quantity = inputQuantity(pastry.DealMinusOne, pastry.Singular, pastry.Plural);
-				pastry = (Pastry2)Closeout(pastry, pastry.PastryTotalCost(), input);
+				pastry = (Pastry)Closeout(pastry, pastry.PastryTotalCost(), input);
 				return pastry;
 			}
 		}

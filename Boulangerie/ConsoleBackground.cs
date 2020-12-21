@@ -39,7 +39,7 @@ namespace Boulangerie
       int breadQuantity = testBread.Quantity;
       int breadPrice = testBread.BreadTotalCost();
       
-      Pastry2 testPastry = (Pastry2)pastry;
+      Pastry testPastry = (Pastry)pastry;
       int pastryQuantity = testPastry.Quantity;
       int pastryPrice = testPastry.PastryTotalCost();
       

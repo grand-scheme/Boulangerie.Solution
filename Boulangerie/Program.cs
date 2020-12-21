@@ -34,7 +34,7 @@ namespace Boulangerie
     {
       ConsoleCalcs consoleCalc = new ConsoleCalcs();
       Bread2 buyBread = new Bread2();
-      Pastry2 buyPastry = new Pastry2();
+      Pastry buyPastry = new Pastry();
       
       Console.WriteLine("╔═══════════════════════════════════════════╗");
       Console.WriteLine("║            PIERRE'S BOULANGERIE           ║");
@@ -52,7 +52,7 @@ namespace Boulangerie
       string selection = Console.ReadLine().ToUpper();
       if (selection == "PASTRY" || selection == "P") 
       {
-        buyPastry = (Pastry2)consoleCalc.Purchases(buyPastry);
+        buyPastry = (Pastry)consoleCalc.Purchases(buyPastry);
         LineBreak();
         Console.WriteLine("Would you like some bread as well?");
         if (YesOrNo() == true) { buyBread = (Bread2)consoleCalc.Purchases(buyBread); }
@@ -83,7 +83,7 @@ namespace Boulangerie
         Console.WriteLine("Would you like some pastries too?");
         if (YesOrNo() == true)
         {
-          buyPastry = (Pastry2)consoleCalc.Purchases(buyPastry);
+          buyPastry = (Pastry)consoleCalc.Purchases(buyPastry);
         }
         LineBreak();
         Console.WriteLine("Are you ready to check out?");
