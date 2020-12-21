@@ -5,15 +5,6 @@ namespace Boulangerie.Models.Tests
   [TestClass]
   public class PastryTests : Prices
   {
-    public override int FullPrice()
-      {
-        return 2;
-      }
-    public override int DiscountPrice()
-      {
-        return 1;
-      }
-
     [TestMethod]
     public void ExcessQuantity_IsDivisibleByThree_True()
     {
