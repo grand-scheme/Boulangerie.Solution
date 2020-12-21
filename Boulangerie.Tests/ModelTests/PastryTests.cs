@@ -67,13 +67,13 @@ namespace Boulangerie.Models.Tests
     public void Pastry2_AbleToSetWithoutInt_Pastry2()
     {
       Pastry2 test7 = this.testPastry;
-      Assert.AreNotEqual(typeof(Pastry2), test7.GetType());
+      Assert.AreEqual(typeof(Pastry2), test7.GetType());
     }
     
     [TestMethod]
     public void Pastry2_ReturnsProductString_String()
     {
-      string expectedString = "bread";
+      string expectedString = "pastry";
       string testString = this.testPastry.Product;
       Assert.AreEqual(expectedString, testString);
     }
@@ -81,7 +81,7 @@ namespace Boulangerie.Models.Tests
     [TestMethod]
     public void Pastry2_ReturnsPluralString_String()
     {
-      string expectedString = "loaves of bread";
+      string expectedString = "pastries";
       string testString = this.testPastry.Plural;
       Assert.AreEqual(expectedString, testString);
     }
