@@ -65,7 +65,40 @@ namespace Boulangerie.Models.Tests
     public void Bread2_AbleToSetWithoutInt_Bread2()
     {
       Bread2 test7 = this.testBread;
-      Assert.AreNotEqual(typeof(Bread2), test7.GetType());
+      Assert.AreEqual(typeof(Bread2), test7.GetType());
     }
+    // end 20
+    [TestMethod] // test 21
+    public void Bread2_ReturnsProductString_String()
+    {
+      string expectedString = "bread";
+      string testString = this.testBread.Product;
+      Assert.AreEqual(expectedString, testString);
+    }
+    // end 21
+    [TestMethod] // test 22
+    public void Bread2_ReturnsPluralString_String()
+    {
+      string expectedString = "bread";
+      string testString = this.testBread.Plural;
+      Assert.AreEqual(expectedString, testString);
+    }
+    // end 22
+    [TestMethod] // test 23
+    public void Bread2_ReturnsSingularString_String()
+    {
+      string expectedString = "breads";
+      string testString = this.testBread.Singular;
+      Assert.AreEqual(expectedString, testString);
+    }
+    // end 23
+    [TestMethod] // test 24
+    public void Bread2_ReturnsDealMinusOneString_String()
+    {
+      string expectedString = "breads";
+      string testString = this.testBread.DealMinusOne;
+      Assert.AreEqual(expectedString, testString);
+    }
+    // end 24
   }
 }
