@@ -6,10 +6,11 @@ namespace Boulangerie.Models.Tests
   public class PricesTests
   {
     [TestMethod] // test 19
-    public void SoldAtDiscount_ReturnsInt_Int()
+    public void GetSoldAtDiscount_ReturnsInt_Int()
     {
-      SoldAtDiscount test19 = new SoldAtDiscount(3);
-      Assert.AreEqual(typeof(int), test19.GetType());
+      Buy2Get1 dummy = new Buy2Get1();
+      int test19 = dummy.GetSoldAtDiscount(3);
+      Assert.AreEqual(typeof(bool), test19.GetType());
     }
     // end of test 19
   }
