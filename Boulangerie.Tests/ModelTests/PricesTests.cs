@@ -36,7 +36,7 @@ namespace Boulangerie.Models.Tests
     {
     Buy2Get1 dummy = new Buy2Get1();
       int test22 = dummy.GetSoldAtFullPrice(3);
-      Assert.AreEqual(typeof(bool), test22.GetType());
+      Assert.AreEqual(typeof(int), test22.GetType());
     }
     // end of test 22
   }
