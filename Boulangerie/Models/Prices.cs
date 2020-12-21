@@ -22,6 +22,16 @@ namespace Boulangerie.Models
 
   public class Buy2Get1 : Prices
   {
+    // getters for testing only
+    public int GetSoldAtDiscount(int quantity)
+    {
+      return SoldAtDiscount(quantity);
+    }
+    public int GetSoldAtFullPrice(int quantity)
+    {
+      return SoldAtFullPrice(quantity);
+    }
+
     int SoldAtDiscount(int quantity)
     {
       int outsideDiscount = (quantity % 3);
