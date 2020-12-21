@@ -17,18 +17,22 @@ namespace Boulangerie.Models.Tests
     [TestMethod] // test 17
     public void ProductCart_CanInstantiateAndReturnNumber_Int()
     {
-      // ConsoleCalcs breadTest01 = new ConsoleCalcs();
       int quantity = 1;
       string productType = "TYPE";
       int output = this.testConsoleCalcs.ProductCart(quantity, productType);
 
-      Assert.AreEqual(typeof(bool), output.GetType());
+      Assert.AreEqual(typeof(int), output.GetType());
     }
     // END TEST 17
-    // [TestMethod] // test 18
-    // public void ProductCart_CanReturnFinalCostIfInputIsBread_Int()
-    // {
-
-    // }
+    [TestMethod] // test 18
+    public void ProductCart_CanReturnFinalCostIfInputIsBread_Int()
+    {
+      int quantity = 1;
+      string productType = "TYPE";
+      int testedOutput = this.testConsoleCalcs.ProductCart(quantity, productType);
+      int expectedOutput = 5;
+      
+      Assert.AreEqual(expectedOutput, testedOutput);
+    }
   }
 }
