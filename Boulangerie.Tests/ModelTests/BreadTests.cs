@@ -16,15 +16,15 @@ namespace Boulangerie.Models.Tests
     public void Bread2_CanGetAndSetQuantity_True()
     {
       Bread2 test2 = new Bread2(10);
-      int testQuantity = test2.BreadQuantity;
+      int testQuantity = test2.Quantity;
       Assert.AreEqual(10, testQuantity);
     }
 
     [TestMethod]
-    public void BreadTotalCost_ReturnsNumber_Int()
+    public void TotalCost_ReturnsNumber_Int()
     {
       Bread2 test3 = new Bread2(5);
-      int test3Quantity = test3.BreadQuantity;
+      int test3Quantity = test3.Quantity;
       Assert.AreEqual(typeof(int), test3Quantity.GetType());
     }
 
@@ -53,6 +53,12 @@ namespace Boulangerie.Models.Tests
       int test6Price = test6.BreadTotalCost();
       int expectedPrice = ((5+5+0) + (5+5+0) + (5+5+0) + (5));
       Assert.AreEqual(expectedPrice, test6Price);
+    }
+    [TestMethod] //test 20
+    public void Bread2_AbleToSetWithoutInt_Bread2()
+    {
+      Bread2 test7 = new Bread2();
+      Assert.AreNotEqual(typeof(Bread2), test7.GetType());
     }
   }
 }
