@@ -41,7 +41,7 @@ namespace Boulangerie.Models.Tests
       int quantity = 1;
       string productType = "PASTRY";
       int testedOutput = this.testConsoleCalcs.ProductCart(quantity, productType);
-      int expectedOutput = 3;
+      int expectedOutput = 2;
 
       Assert.AreEqual(expectedOutput, testedOutput);
     }

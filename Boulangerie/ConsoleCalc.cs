@@ -21,9 +21,6 @@ else
 { 
     Buy2Get1 pastryCartTotal = new Buy2Get1();
     return pastryCartTotal.FinalCost(quantity, productType);
-//   Pastry cartTotal = new Pastry();
-//   return cartTotal.PastryFinalCost(quantity); 
-// return 0;
 }
 }
 //     public int Purchases(string input)
