@@ -14,33 +14,22 @@ namespace Boulangerie.Models.Tests
     }
 
     [TestMethod]
-    public void GetSoldAtDiscount_ReturnsInt_SystemInt()
+    public void FinalCost_ReturnsCorrectPriceForInputBread_Int()
     {
-      int test19 = this.testB2G1.GetSoldAtDiscount(3);
-      Assert.AreEqual(typeof(int), test19.GetType());
+      int quantity = 1;
+      string productType = "BREAD";
+      int testPrice = this.testB2G1.FinalCost(quantity, productType);
+      int expectedPrice = 5;
+      Assert.AreEqual(expectedPrice, testPrice);
     }
-
     [TestMethod]
-    public void GetSoldAtDiscount_ReturnsQuantityOfProductSoldAtDiscountPrice_Int()
+    public void FinalCost_ReturnsCorrectPriceForInputPastry_Int()
     {
-      int test20 = this.testB2G1.GetSoldAtDiscount(3);
-      int expectedQuantity = 1;
-      Assert.AreEqual(expectedQuantity, test20);
-    }
-
-    [TestMethod]
-    public void GetSoldAtDiscount_ReturnsQuantityWhenInBulk_Int()
-    {
-      int test21 = this.testB2G1.GetSoldAtDiscount(32);
-      int expectedQuantity = 10;
-      Assert.AreEqual(expectedQuantity, test21);
-    }
-
-    [TestMethod]
-    public void SoldAtFullPrice_ReturnsInt_SystemInt()
-    {
-      int test22 = this.testB2G1.GetSoldAtFullPrice(3);
-      Assert.AreEqual(typeof(int), test22.GetType());
+      int quantity = 1;
+      string productType = "PASTRY";
+      int testPrice = this.testB2G1.FinalCost(quantity, productType);
+      int expectedPrice = 2;
+      Assert.AreEqual(expectedPrice, testPrice);
     }
   }
 }
