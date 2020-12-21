@@ -37,7 +37,7 @@ namespace Boulangerie.Models.Tests
     {
       Pastry2 test4 = new Pastry2(1);
       int test4Price = test4.PastryTotalCost();
-      int expectedPrice = 1;
+      int expectedPrice = 2;
       Assert.AreEqual(expectedPrice, test4Price);
     }
     // end of test 26
