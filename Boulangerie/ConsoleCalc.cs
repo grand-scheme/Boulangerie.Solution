@@ -78,7 +78,7 @@ namespace Boulangerie
       else if ((breadQuantity  != 0) && (pastryQuantity != 0)) 
       { 
         Console.WriteLine("It looks like you're getting " + breadQuantity + breadMatchNumber + " at " + breadPrice + ".");
-        Console.WriteLine("And for it's " + pastryQuantity + pastryMatchNumber + " at " + pastryPrice + ".");
+        Console.WriteLine("And it's " + pastryQuantity + pastryMatchNumber + " at " + pastryPrice + ".");
         Console.WriteLine("Your grand total is $" + (breadPrice + pastryPrice)); 
         LineBreak();
         return true;

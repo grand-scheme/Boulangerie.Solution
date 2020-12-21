@@ -13,13 +13,13 @@ namespace Boulangerie.Models
     int SoldAtDiscount(int quantity)
     {
       int outsideDiscount = (quantity % 3);
-      int insideDiscount = quantity - outsideDiscount;
+      int insideDiscount = (quantity - outsideDiscount);
       return (insideDiscount / 3);
     }
 
     int SoldAtFullPrice(int quantity)
     {
-      return quantity - SoldAtDiscount(quantity);
+      return (quantity - SoldAtDiscount(quantity));
     }
 
     public int FinalCost(int quantity, string productType)

@@ -16,14 +16,15 @@ namespace Boulangerie.Models
       DealMinusOne = "It's 'Buy three for $5' for our pastries. It's only a dollar to add one more to your bag. Do you want to add one more?";
     }
     public Pastry(int quantity)
+    : this()
     {
       Quantity = quantity;
     }
 
     public int PastryTotalCost()
     {
-      Buy2Get1 dummy = new Buy2Get1();
-      return dummy.FinalCost(Quantity, "PASTRY");
+      Buy2Get1 pastry = new Buy2Get1();
+      return pastry.FinalCost(Quantity, "PASTRY");
     }
   }
 }

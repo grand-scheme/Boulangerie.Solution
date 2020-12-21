@@ -55,7 +55,10 @@ namespace Boulangerie
         buyPastry = (Pastry)consoleCalc.Purchases(buyPastry);
         LineBreak();
         Console.WriteLine("Would you like some bread as well?");
-        if (YesOrNo() == true) { buyBread = (Bread)consoleCalc.Purchases(buyBread); }
+        if (YesOrNo() == true) 
+        { 
+          buyBread = (Bread)consoleCalc.Purchases(buyBread); 
+        }
         LineBreak();
         Console.WriteLine("Are you ready to check out?");
         if (YesOrNo() == true)
