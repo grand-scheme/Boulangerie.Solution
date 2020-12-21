@@ -2,20 +2,16 @@ namespace Boulangerie.Models
 {
   public abstract class Discount : Prices
   {
-    int ExcessQuantity(int quantity)
+    int SoldAtDiscount(int quantity)
     {
-      return (quantity % 3);
+      int outsideDiscount = (quantity % 3)
+      int insideDiscount = quantity - outsideDiscount;
+      return (insideDiscount / 3);
     }
 
-    int AtDiscountQuantity(int quantity)
+    int SoldAtFullPrice(int quantity)
     {
-      int WithinDealQuantity = quantity - ExcessQuantity(quantity);
-      return (WithinDealQuantity / 3);
-    }
-
-    int FullPriceQuantity(int quantity)
-    {
-      return quantity - AtDiscountQuantity(quantity);
+      return quantity - SoldAtDiscount(quantity);
     }
 
     public int FinalCost(int quantity, string type)
@@ -24,25 +20,19 @@ namespace Boulangerie.Models
       {
         return 
         (
-          (FullPriceQuantity(quantity) * BreadFullPrice())
+          (SoldAtFullPrice(quantity) * BreadFullPrice())
           +
-          (AtDiscountQuantity(quantity) * BreadDiscountPrice())
+          (SoldAtDiscount(quantity) * BreadDiscountPrice())
         );
       }
-
-      if (type == "pastry") 
+      else // if (type == "pastry") 
       {
         return 
         (
-          (FullPriceQuantity(quantity) * PastryFullPrice()) 
+          (SoldAtFullPrice(quantity) * PastryFullPrice()) 
           +
-          (AtDiscountQuantity(quantity) * PastryDiscountPrice())
+          (SoldAtDiscount(quantity) * PastryDiscountPrice())
         );
-      }
-
-      else
-      {
-        return 999999;
       }
     }
   }
