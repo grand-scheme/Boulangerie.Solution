@@ -8,8 +8,8 @@ namespace Boulangerie.Models
     }
     public int AtDiscountQuantity(int breadQuantity)
     {
-      int WithinDealQuantity = breadQuantity - ExcessQuantity(breadQuantity);
-      return (WithinDealQuantity / 3);
+      int withinDealQuantity = breadQuantity - ExcessQuantity(breadQuantity);
+      return (withinDealQuantity / 3);
     }
     public int FullPriceQuantity(int breadQuantity)
     {
