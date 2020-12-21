@@ -3,7 +3,7 @@ using Boulangerie.Models;
 
 namespace Boulangerie
 {
-  class ConsoleInterface : FrequentCallback
+  class ConsoleInterface : ConsoleBackground
   {
     private static bool Checkout(object bread, object pastry)
     {

@@ -3,7 +3,7 @@ using Boulangerie.Models;
 
 namespace Boulangerie
 {
-	public class ConsoleCalcs : FrequentCallback
+	public class ConsoleCalcs : ConsoleBackground
 	{
 		private int inputQuantity(string dealText, string single, string plural)
 		{

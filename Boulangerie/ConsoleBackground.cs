@@ -3,7 +3,7 @@ using Boulangerie.Models;
 
 namespace Boulangerie
 {
-  public abstract class FrequentCallback
+  public abstract class ConsoleBackground
     {
       public static void LineBreak()
       {
@@ -30,8 +30,4 @@ namespace Boulangerie
         }
       }
     }
-  public class ConsoleBackground : FrequentCallback
-  {
-    
-  }
 }
