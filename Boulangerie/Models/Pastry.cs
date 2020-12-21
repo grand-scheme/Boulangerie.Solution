@@ -12,7 +12,7 @@ namespace Boulangerie.Models
     public int PastryTotalCost()
     {
       Buy2Get1 dummy = new Buy2Get1();
-      return dummy.FinalCost(PastryQuantity, "pastry");
+      return dummy.FinalCost(PastryQuantity, "PASTRY");
     }
   }
 }
