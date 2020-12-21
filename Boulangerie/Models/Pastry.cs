@@ -1,18 +1,15 @@
 namespace Boulangerie.Models
 {
-  public abstract class PastryPrices
+  public class Pastry : Prices
   {
-    public int FullPrice()
-    {
-      return 2;
-    }
-    public int DiscountPrice()
-    {
-      return 1;
-    }
-  }
-  public class Pastry : PastryPrices
-  {
+    public override int FullPrice()
+      {
+        return 2;
+      }
+    public override int DiscountPrice()
+      {
+        return 1;
+      }
     public int ExcessQuantity(int pastryQuantity)
     {
       return pastryQuantity % 3;
